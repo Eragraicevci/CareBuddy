@@ -122,3 +122,11 @@ C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\obj\Debug\net7.0\refint\API
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\obj\Debug\net7.0\API.pdb
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\obj\Debug\net7.0\ref\API.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

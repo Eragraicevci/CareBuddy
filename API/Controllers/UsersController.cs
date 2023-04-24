@@ -1,11 +1,14 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly DataContext _context;
@@ -15,8 +18,8 @@ namespace API.Controllers
             _context = context;
         }
 
+       [AllowAnonymous]
         [HttpGet]
-
         public ActionResult<IEnumerable<AppUser>> GetUsers()
         {
             var users =_context.Users.ToList();
