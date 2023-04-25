@@ -2,6 +2,7 @@ using System.Text;
 using API.Data;
 using API.Extenstions;
 using API.Interfaces;
+using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
+
 
 builder.Services.AddDbContext<DataContext>(opt => 
 {
@@ -30,6 +32,8 @@ builder.Services.AddCors(options =>
     });
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();
+
 
 
 // Configure the HTTP request pipeline.
