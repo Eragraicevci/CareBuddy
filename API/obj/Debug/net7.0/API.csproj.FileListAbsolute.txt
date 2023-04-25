@@ -130,3 +130,11 @@ C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\System.IdentityModel.Token
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
