@@ -18,7 +18,7 @@ namespace API.Controllers
             _context = context;
         }
 
-       [AllowAnonymous]
+       //[AllowAnonymous]
         [HttpGet]
         public ActionResult<IEnumerable<AppUser>> GetUsers()
         {
