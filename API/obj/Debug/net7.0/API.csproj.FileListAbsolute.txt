@@ -139,3 +139,6 @@ C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Data\UserSeedData.json
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Data\UserSeedData.json
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
