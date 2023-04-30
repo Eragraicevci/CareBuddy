@@ -23,6 +23,7 @@ namespace API.Helpers
             CreateMap<Address, AddressDTO>();
             CreateMap<AnalysisResultFile, AnalysisResultFileDTO>();
             CreateMap<MemberUpdateDto, AppUser>();
+            CreateMap<RegisterDto, AppUser>();
         }
     }
 }
