@@ -146,3 +146,5 @@ C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\CloudinaryDotNet.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Newtonsoft.Json.dll
