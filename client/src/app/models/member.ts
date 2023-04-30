@@ -6,6 +6,7 @@ import { Photo } from "./photo"
 export interface Member {
     id: number
     userName: string
+    knownAs: string
     name: string
     lastName: string
     photo: string //photo url

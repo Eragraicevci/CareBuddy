@@ -88,6 +88,9 @@ namespace API.Migrations
                     b.Property<string>("Gender")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("KnownAs")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LanguageSpoken")
                         .HasColumnType("TEXT");
 
