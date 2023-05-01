@@ -41,7 +41,7 @@ namespace API.Data
         {
             return await _context.Users
                 .Include(p => p.Photos)
-                .Include(ar => ar.AnalysisResultFiles)
+                .Include(f => f.AnalysisResultFiles)
                 .SingleOrDefaultAsync(x => x.UserName == username);
         }
 
@@ -49,7 +49,7 @@ namespace API.Data
         {
             return await _context.Users
                 .Include(p => p.Photos)
-                .Include(ar => ar.AnalysisResultFiles)
+                .Include(f => f.AnalysisResultFiles)
                 .ToListAsync();
         }
 

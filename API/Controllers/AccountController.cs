@@ -51,6 +51,7 @@ namespace API.Controllers
         {
             var user = await _context.Users
                 .Include(p => p.Photos)
+                .Include(f => f.AnalysisResultFiles)
                 .SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
 
             if (user == null) return Unauthorized("invalid username");
@@ -69,6 +70,7 @@ namespace API.Controllers
                 Username = user.UserName,
                 Token = _tokenService.CreateToken(user),
                 Photo = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
+                AnalysisResultFile = user.AnalysisResultFiles.FirstOrDefault(x => x.IsMainPDF)?.Url,
                 KnownAs = user.KnownAs
             };
         }

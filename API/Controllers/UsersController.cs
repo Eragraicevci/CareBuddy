@@ -18,10 +18,17 @@ namespace API.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
-        public UsersController(IUserRepository userRepository, IMapper mapper, 
-            IPhotoService photoService)
+        private readonly IAnalysisResultFileService _analysisResultFileService;
+
+        public UsersController(
+            IUserRepository userRepository,
+            IMapper mapper,
+            IPhotoService photoService,
+            IAnalysisResultFileService analysisResultFileService
+        )
         {
             _photoService = photoService;
+            _analysisResultFileService = analysisResultFileService;
             _mapper = mapper;
             _userRepository = userRepository;
         }
@@ -35,7 +42,6 @@ namespace API.Controllers
         }
 
         [HttpGet("{username}")]
-
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
             return await _userRepository.GetMemberAsync(username);
@@ -46,11 +52,13 @@ namespace API.Controllers
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
-            if (user == null) return NotFound();
+            if (user == null)
+                return NotFound();
 
             _mapper.Map(memberUpdateDto, user);
 
-            if (await _userRepository.SaveAllAsync()) return NoContent();
+            if (await _userRepository.SaveAllAsync())
+                return NoContent();
 
             return BadRequest("Failed to update user");
         }
@@ -60,11 +68,13 @@ namespace API.Controllers
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
-            if (user == null) return NotFound();
+            if (user == null)
+                return NotFound();
 
             var result = await _photoService.AddPhotoAsync(file);
 
-            if (result.Error != null) return BadRequest(result.Error.Message);
+            if (result.Error != null)
+                return BadRequest(result.Error.Message);
 
             var photo = new Photo
             {
@@ -72,14 +82,18 @@ namespace API.Controllers
                 PublicId = result.PublicId
             };
 
-            if (user.Photos.Count == 0) photo.IsMain = true;
+            if (user.Photos.Count == 0)
+                photo.IsMain = true;
 
             user.Photos.Add(photo);
 
-            if (await _userRepository.SaveAllAsync()) 
+            if (await _userRepository.SaveAllAsync())
             {
-                return CreatedAtAction(nameof(GetUser), 
-                    new {username = user.UserName}, _mapper.Map<PhotoDto>(photo));
+                return CreatedAtAction(
+                    nameof(GetUser),
+                    new { username = user.UserName },
+                    _mapper.Map<PhotoDto>(photo)
+                );
             }
 
             return BadRequest("Problem adding photo");
@@ -90,19 +104,24 @@ namespace API.Controllers
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
-            if (user == null) return NotFound();
+            if (user == null)
+                return NotFound();
 
             var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
 
-            if (photo == null) return NotFound();
+            if (photo == null)
+                return NotFound();
 
-            if (photo.IsMain) return BadRequest("this is already your main photo");
+            if (photo.IsMain)
+                return BadRequest("this is already your main photo");
 
             var currentMain = user.Photos.FirstOrDefault(x => x.IsMain);
-            if (currentMain != null) currentMain.IsMain = false;
+            if (currentMain != null)
+                currentMain.IsMain = false;
             photo.IsMain = true;
 
-            if (await _userRepository.SaveAllAsync()) return NoContent();
+            if (await _userRepository.SaveAllAsync())
+                return NoContent();
 
             return BadRequest("Problem setting the main photo");
         }
@@ -114,21 +133,108 @@ namespace API.Controllers
 
             var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
 
-            if (photo == null) return NotFound();
+            if (photo == null)
+                return NotFound();
 
-            if (photo.IsMain) return BadRequest("You cannot delete your main photo");
+            if (photo.IsMain)
+                return BadRequest("You cannot delete your main photo");
 
             if (photo.PublicId != null)
             {
                 var result = await _photoService.DeletePhotoAsync(photo.PublicId);
-                if (result.Error != null) return BadRequest(result.Error.Message);
+                if (result.Error != null)
+                    return BadRequest(result.Error.Message);
             }
 
             user.Photos.Remove(photo);
 
-            if (await _userRepository.SaveAllAsync()) return Ok();
+            if (await _userRepository.SaveAllAsync())
+                return Ok();
 
             return BadRequest("Problem deleting photo");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpPost("add-analysisResultFile")]
+        public async Task<ActionResult<AnalysisResultFileDTO>> AddAnalysisResultFile(Stream document)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+
+            if (user == null)
+                return NotFound();
+
+            var result = await _analysisResultFileService.AddDocumentAsync(document);
+
+            if (result.Error != null)
+                return BadRequest(result.Error.Message);
+
+            var analysisResultFile = new AnalysisResultFile
+            {
+                Url = result.SecureUrl.AbsoluteUri,
+                PublicId = result.PublicId
+            };
+
+            if (user.AnalysisResultFiles.Count == 0)
+                analysisResultFile.IsMainPDF = true;
+
+            user.AnalysisResultFiles.Add(analysisResultFile);
+
+            if (await _userRepository.SaveAllAsync())
+            {
+                return CreatedAtAction(
+                    nameof(GetUser),
+                    new { username = user.UserName },
+                    _mapper.Map<AnalysisResultFileDTO>(analysisResultFile)
+                );
+            }
+
+            return BadRequest("Problem adding file");
+        }
+
+           [HttpDelete("delete-analysisResultFIle/{analysisResultFileId}")]
+        public async Task<ActionResult> DeleteAnalysisResultFile(int analysisResultFileId)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+
+            var analysisResultFile = user.AnalysisResultFiles.FirstOrDefault(x => x.Id == analysisResultFileId);
+
+            if (analysisResultFile == null)
+                return NotFound();
+
+            if (analysisResultFile.IsMainPDF)
+                return BadRequest("You cannot delete your main file");
+
+            if (analysisResultFile.PublicId != null)
+            {
+                var result = await _analysisResultFileService.DeleteDocumentAsync(analysisResultFile.PublicId);
+                if (result.Error != null)
+                    return BadRequest(result.Error.Message);
+            }
+
+            user.AnalysisResultFiles.Remove(analysisResultFile);
+
+            if (await _userRepository.SaveAllAsync())
+                return Ok();
+
+            return BadRequest("Problem deleting file");
+        }
+
     }
 }

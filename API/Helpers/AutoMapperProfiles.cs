@@ -14,6 +14,10 @@ namespace API.Helpers
                     dest => dest.Photo,
                     opt => opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url)
                 )
+                 .ForMember(
+                    dest => dest.AnalysisResultFile,
+                    opt => opt.MapFrom(src => src.AnalysisResultFiles.FirstOrDefault(x => x.IsMainPDF).Url)
+                )
                 .ForMember(
                     dest => dest.Age,
                     opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge())

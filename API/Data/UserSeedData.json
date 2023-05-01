@@ -19,6 +19,7 @@
         "AnalysisResultFiles": [
             {
                 "Url": "https://psych.uw.edu/storage/writing_center/stats.pdf",
+                "IsMainPDF": true,
                 "UploadDate": "2020-05-23"
             }
         ],
