@@ -1,42 +1,42 @@
-using System;
-using API.Interfaces;
-using API.Entities;
-using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 using System.Security.Claims;
+using System.Text;
+using API.Entities;
+using API.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API.Services
 {
-
-public class TokenService: ITokenService
-{
-    private readonly SymmetricSecurityKey _key;
-    public TokenService(IConfiguration config)
+    public class TokenService : ITokenService
     {
-        _key= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
-    }
-    public string CreateToken(AppUser user)
-    {
-        var claims=new List<Claim>
+        private readonly SymmetricSecurityKey _key;
+        public TokenService(IConfiguration config)
         {
-            new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
-        };
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
+        }
 
-        var creds= new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
-
-        var tokenDescriptor= new SecurityTokenDescriptor
+        public string CreateToken(AppUser user)
         {
-            Subject = new ClaimsIdentity(claims),
-            Expires=DateTime.Now.AddDays(7),
-            SigningCredentials=creds
-        };
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
+            };
 
-        var tokenHandler=new JwtSecurityTokenHandler();
+            var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
-        var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.Now.AddDays(7),
+                SigningCredentials = creds
+            };
 
-        return tokenHandler.WriteToken(token);
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            return tokenHandler.WriteToken(token);
+        }
     }
-}
 }
