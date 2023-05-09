@@ -14,9 +14,12 @@ namespace API.Helpers
                     dest => dest.Photo,
                     opt => opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url)
                 )
-                 .ForMember(
+                .ForMember(
                     dest => dest.AnalysisResultFile,
-                    opt => opt.MapFrom(src => src.AnalysisResultFiles.FirstOrDefault(x => x.IsMainPDF).Url)
+                    opt =>
+                        opt.MapFrom(
+                            src => src.AnalysisResultFiles.FirstOrDefault(x => x.IsMainPDF).Url
+                        )
                 )
                 .ForMember(
                     dest => dest.Age,
@@ -28,6 +31,15 @@ namespace API.Helpers
             CreateMap<AnalysisResultFile, AnalysisResultFileDTO>();
             CreateMap<MemberUpdateDto, AppUser>();
             CreateMap<RegisterDto, AppUser>();
+            CreateMap<Message, MessageDto>()
+                .ForMember(
+                    d => d.SenderPhotoUrl,
+                    o => o.MapFrom(s => s.Sender.Photos.FirstOrDefault(x => x.IsMain).Url)
+                )
+                .ForMember(
+                    d => d.RecipientPhotoUrl,
+                    o => o.MapFrom(s => s.Recipient.Photos.FirstOrDefault(x => x.IsMain).Url)
+                );
         }
     }
 }
