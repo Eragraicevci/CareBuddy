@@ -35,9 +35,9 @@ namespace API.Entities
         public List<MedicalExpertise> MedicalExpertises { get; set; } = new();
         public List<Address> Addresses { get; set; } = new();
 
-        // public int GetAge()
-        // {
-        //     return DateOfBirth.CalculateAge();
-        // }
+        public List<UserLike> LikedByUsers { get; set; }
+        
+        public List<UserLike> LikedUsers { get; set; }
+        
     }
 }
