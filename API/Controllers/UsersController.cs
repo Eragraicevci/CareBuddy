@@ -35,21 +35,28 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
+        public async Task<ActionResult<PagedList<MemberDto>>> GetUsers(
+            [FromQuery] UserParams userParams
+        )
         {
-             var currentUser = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+            var currentUser = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
             userParams.CurrentUsername = currentUser.UserName;
 
-             if (string.IsNullOrEmpty(userParams.Gender))
+            if (string.IsNullOrEmpty(userParams.Gender))
             {
                 userParams.Gender = currentUser.Gender == "male" ? "female" : "male";
             }
 
-
             var users = await _userRepository.GetMembersAsync(userParams);
 
-            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, 
-            users.TotalCount, users.TotalPages));
+            Response.AddPaginationHeader(
+                new PaginationHeader(
+                    users.CurrentPage,
+                    users.PageSize,
+                    users.TotalCount,
+                    users.TotalPages
+                )
+            );
 
             return Ok(users);
         }
@@ -167,26 +174,10 @@ namespace API.Controllers
             return BadRequest("Problem deleting photo");
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [HttpPost("add-analysisResultFile")]
-        public async Task<ActionResult<AnalysisResultFileDTO>> AddAnalysisResultFile(Stream document)
+        public async Task<ActionResult<AnalysisResultFileDTO>> AddAnalysisResultFile(
+            Stream document
+        )
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
@@ -221,12 +212,14 @@ namespace API.Controllers
             return BadRequest("Problem adding file");
         }
 
-           [HttpDelete("delete-analysisResultFIle/{analysisResultFileId}")]
+        [HttpDelete("delete-analysisResultFIle/{analysisResultFileId}")]
         public async Task<ActionResult> DeleteAnalysisResultFile(int analysisResultFileId)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
-            var analysisResultFile = user.AnalysisResultFiles.FirstOrDefault(x => x.Id == analysisResultFileId);
+            var analysisResultFile = user.AnalysisResultFiles.FirstOrDefault(
+                x => x.Id == analysisResultFileId
+            );
 
             if (analysisResultFile == null)
                 return NotFound();
@@ -236,7 +229,9 @@ namespace API.Controllers
 
             if (analysisResultFile.PublicId != null)
             {
-                var result = await _analysisResultFileService.DeleteDocumentAsync(analysisResultFile.PublicId);
+                var result = await _analysisResultFileService.DeleteDocumentAsync(
+                    analysisResultFile.PublicId
+                );
                 if (result.Error != null)
                     return BadRequest(result.Error.Message);
             }
@@ -248,6 +243,5 @@ namespace API.Controllers
 
             return BadRequest("Problem deleting file");
         }
-
     }
 }
