@@ -1,14 +1,11 @@
-using System.Text;
 using API.Data;
 using API.Entities;
+using API.Extensions;
 using API.Extenstions;
-using API.Interfaces;
 using API.Middleware;
-using API.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using API.SignalR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,50 +15,38 @@ builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
 
-
-builder.Services.AddDbContext<DataContext>(opt => 
-{
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-
-builder.Services.AddCors(options =>
-    {
-        options.AddPolicy("AllowAnyOrigin",
-            builder => builder.AllowAnyOrigin()
-                              .AllowAnyMethod()
-                              .AllowAnyHeader());
-    });
-
 var app = builder.Build();
-app.UseMiddleware<ExceptionMiddleware>();
-
-
 
 // Configure the HTTP request pipeline.
-//app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
-app.UseCors("AllowAnyOrigin");
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseCors(builder => builder
+    .WithOrigins("http://localhost:4200")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials());
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<PresenceHub>("hubs/presence");
 
-//ordering of methods matters here
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
-try
+try 
 {
     var context = services.GetRequiredService<DataContext>();
-     var userManager = services.GetRequiredService<UserManager<AppUser>>();
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
     await context.Database.MigrateAsync();
+    await context.Database.ExecuteSqlRawAsync("DELETE FROM [Connections]");
     await Seed.SeedUsers(userManager, roleManager);
 }
-catch(Exception ex)
+catch (Exception ex)
 {
-    var logger =services.GetService<ILogger<Program>>();
-    logger.LogError(ex, "Some error occured during migration");
+    var logger = services.GetService<ILogger<Program>>();
+    logger.LogError(ex, "An error occurred during migration");
 }
 
 app.Run();
