@@ -1,6 +1,5 @@
 using API.Data;
 using API.Entities;
-using API.Extensions;
 using API.Extenstions;
 using API.Middleware;
 using API.SignalR;
@@ -31,6 +30,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapHub<PresenceHub>("hubs/presence");
+app.MapHub<MessageHub>("hubs/message");
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
