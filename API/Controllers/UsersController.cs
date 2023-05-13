@@ -34,10 +34,8 @@ namespace API.Controllers
             _uow=uow;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<PagedList<MemberDto>>> GetUsers(
-            [FromQuery] UserParams userParams
-        )
+       [HttpGet]
+        public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
             var currentUser = await _uow.UserRepository.GetUserByUsernameAsync(User.GetUsername());
             userParams.CurrentUsername = currentUser.UserName;
@@ -49,17 +47,12 @@ namespace API.Controllers
 
             var users = await _uow.UserRepository.GetMembersAsync(userParams);
 
-            Response.AddPaginationHeader(
-                new PaginationHeader(
-                    users.CurrentPage,
-                    users.PageSize,
-                    users.TotalCount,
-                    users.TotalPages
-                )
-            );
+            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, 
+                users.TotalCount, users.TotalPages));
 
             return Ok(users);
         }
+        
 
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
