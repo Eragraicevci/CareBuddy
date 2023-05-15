@@ -7,11 +7,8 @@
                 <div class="mb-2" *ngIf="(presenceService.onlineUsers$ | async)?.includes(member.userName)">
                     <i class="class fa fa-user-circle text-success"></i> Online now
                 </div>
-
-                <div>
-                    <strong>Location:</strong>
-                    <p>{{member.addresses}}</p>
-                </div>
+                
+            
                 <div>
                     <strong>Age:</strong>
                     <p>{{member.age}}</p>
@@ -37,14 +34,16 @@
 
     <div class="col-8">
         <tabset class="member-tabset" #memberTabs>
-            <tab heading="About {{member.userName}}" (selectTab)="onTabActivated($event)">
+            <tab heading="About {{member.userName.charAt(0).toUpperCase() + member.userName.slice(1)}}" (selectTab)="onTabActivated($event)">
                 <h4>Description</h4>
                 <p>{{member.description}}</p>
-                <h4>Looking for</h4>
+                <h4>Language spoken</h4>
+                <p>{{member.languageSpoken}}</p>
+
             </tab>
-            <tab heading="Interests" (selectTab)="onTabActivated($event)">
-                <h4>Interests</h4>
-                <p>{{member.description}}</p>
+            <tab heading="Medical expertise" (selectTab)="onTabActivated($event)">
+                <h4>Certificates</h4>
+                <h4>Trainings</h4>
             </tab>
             <tab heading="Photos" (selectTab)="onTabActivated($event)">
                 <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>

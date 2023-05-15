@@ -1,4 +1,5 @@
-<div class="card mb-4" *ngIf="member">
+<div class="card-container">
+<div class="card mb-5" *ngIf="member">
     <div class="card-img-wrapper">
         <img src="{{member.photo || './assets/user.png'}}" alt="{{member.userName}}" class="card-img-top">
         <ul class="list-inline member-icons animate text-center">
@@ -25,8 +26,11 @@
                 <i class="fa fa-user me-2"></i>
             </span>
             
-            {{member.userName}}, {{member.age}}
+           Dr. {{member.userName.charAt(0).toUpperCase() + member.userName.slice(1)}}
+           
         </h6>
-        <p class="card-text text-muted text-center">{{member.addresses}}</p>
+        <!-- <p class="card-text text-muted text-center">{{member.addresses}}</p> -->
     </div>
+</div>
+    
 </div>
