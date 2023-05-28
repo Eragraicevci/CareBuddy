@@ -1,7 +1,7 @@
-using API.DTOs;
-using API.Entities;
+using Core.DTOs;
+using Core.Entities;
 using API.Extenstions;
-using API.Interfaces;
+using Core.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;

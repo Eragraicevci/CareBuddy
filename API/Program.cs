@@ -1,5 +1,5 @@
-using API.Data;
-using API.Entities;
+using Infrastructure.Data;
+using Core.Entities;
 using API.Extenstions;
 using API.Middleware;
 using API.SignalR;

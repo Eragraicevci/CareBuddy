@@ -1,17 +1,14 @@
-using System.Security.Cryptography;
-using System.Text;
-using API.Data;
-using API.DTOs;
-using API.Entities;
-using API.Interfaces;
+using Core.DTOs;
+using Core.Interfaces;
 using AutoMapper;
+using Core.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
- {
-     public class AccountController : BaseApiController
+{
+    public class AccountController : BaseApiController
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;

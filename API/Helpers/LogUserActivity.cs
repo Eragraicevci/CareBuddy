@@ -1,5 +1,5 @@
 using API.Extenstions;
-using API.Interfaces;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace API.Helpers

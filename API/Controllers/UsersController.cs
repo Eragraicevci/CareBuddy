@@ -1,12 +1,11 @@
 using System.Security.Claims;
-using API.Data;
-using API.DTOs;
-using API.Entities;
+using Core.DTOs;
 using API.Extensions;
 using API.Extenstions;
 using API.Helpers;
-using API.Interfaces;
+using Core.Interfaces;
 using AutoMapper;
+using Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

@@ -1,7 +1,6 @@
-using API.Data;
-using API.Entities;
+using Infrastructure.Data;
 using API.Helpers;
-using API.Interfaces;
+using Core.Interfaces;
 using API.Services;
 using API.SignalR;
 using Microsoft.EntityFrameworkCore;

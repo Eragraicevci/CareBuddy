@@ -1,5 +1,5 @@
-using API.DTOs;
-using API.Entities;
+using Core.DTOs;
+using Core.Entities;
 using API.Extensions;
 using AutoMapper;
 
