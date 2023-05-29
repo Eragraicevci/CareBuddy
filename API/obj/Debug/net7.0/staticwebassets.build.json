@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "bUm1vPqwZHJejLhtNIB7WgmMI8ngxypkYrDApg4MvgQ=",
+  "Hash": "odC6p4H+auWu5lo4yCY759DKz/TFW+b/0c/2GleN/j4=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/services/bloodAnalysis.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\services\\bloodAnalysis.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "images/services/dental.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\services\\dental.jpg"
+    }
+  ]
 }

@@ -9,6 +9,11 @@ namespace API.Helpers
     {
         public AutoMapperProfiles()
         {
+            CreateMap<Service, ServiceDto>()
+                .ForMember(d => d.Hospital, o => o.MapFrom(s => s.Hospital.Name))
+                .ForMember(d => d.ServiceType, o => o.MapFrom(s => s.ServiceType.Name))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom<ServiceUrlResolver>());
+
             CreateMap<AppUser, MemberDto>()
                 .ForMember(
                     dest => dest.Photo,
@@ -38,11 +43,14 @@ namespace API.Helpers
                 )
                 .ForMember(
                     d => d.RecipientPhotoUrl,
-                    o => o.MapFrom(s => s.Recipient.Photos.FirstOrDefault(x => x.IsMain).Url));
-                CreateMap<DateTime, DateTime>().ConvertUsing(d => DateTime.SpecifyKind(d, DateTimeKind.Utc));
-            CreateMap<DateTime?, DateTime?>().ConvertUsing(d => d.HasValue ? 
-                DateTime.SpecifyKind(d.Value, DateTimeKind.Utc) : null);
-                  
+                    o => o.MapFrom(s => s.Recipient.Photos.FirstOrDefault(x => x.IsMain).Url)
+                );
+            CreateMap<DateTime, DateTime>()
+                .ConvertUsing(d => DateTime.SpecifyKind(d, DateTimeKind.Utc));
+            CreateMap<DateTime?, DateTime?>()
+                .ConvertUsing(
+                    d => d.HasValue ? DateTime.SpecifyKind(d.Value, DateTimeKind.Utc) : null
+                );
         }
     }
 }
