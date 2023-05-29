@@ -138,7 +138,6 @@ C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Data\UserSeedData.json
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\Data\UserSeedData.json
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\PC\OneDrive\Desktop\CareBuddy\CareBuddy\API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
@@ -308,3 +307,7 @@ C:\Users\PC\OneDrive\Desktop\core\CareBuddy\API\obj\Debug\net7.0\refint\API.dll
 C:\Users\PC\OneDrive\Desktop\core\CareBuddy\API\obj\Debug\net7.0\API.pdb
 C:\Users\PC\OneDrive\Desktop\core\CareBuddy\API\obj\Debug\net7.0\API.genruntimeconfig.cache
 C:\Users\PC\OneDrive\Desktop\core\CareBuddy\API\obj\Debug\net7.0\ref\API.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Core.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Infrastructure.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Infrastructure.pdb
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Core.pdb

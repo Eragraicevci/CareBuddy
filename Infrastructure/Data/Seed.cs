@@ -14,7 +14,7 @@ namespace Infrastructure.Data
         {
             if (await userManager.Users.AnyAsync()) return;
 
-            var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
+            var userData = await File.ReadAllTextAsync("../Infrastructure/Data/UserSeedData.json");
 
             var options = new JsonSerializerOptions{PropertyNameCaseInsensitive = true};
 
@@ -53,8 +53,8 @@ namespace Infrastructure.Data
         {
             if (!context.Hospitals.Any())
             {
-                var hospitalData = File.ReadAllText("../Infrastructure/Data/SeedData/hospitals.json");
-                var hospitals = JsonSerializer.Deserialize<List<Hospital>>(hospitalData);
+                var hospitalsData = File.ReadAllText("../Infrastructure/Data/SeedData/hospitals.json");
+                var hospitals = JsonSerializer.Deserialize<List<Hospital>>(hospitalsData);
                 context.Hospitals.AddRange(hospitals);
             }
 
@@ -67,7 +67,7 @@ namespace Infrastructure.Data
 
             if (!context.Services.Any())
             {
-                var servicesData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
+                var servicesData = File.ReadAllText("../Infrastructure/Data/SeedData/services.json");
                 var services = JsonSerializer.Deserialize<List<Service>>(servicesData);
                 context.Services.AddRange(services);
             }

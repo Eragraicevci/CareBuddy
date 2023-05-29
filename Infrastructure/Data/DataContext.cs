@@ -25,10 +25,10 @@ namespace Infrastructure.Data
 
         public DbSet<Group> Groups { get; set; }
         public DbSet<Connection> Connections { get; set; }
-
-        public DbSet<Service> Services { get; set; }
+public DbSet<Hospital> Hospitals { get; set; }
+        
         public DbSet<ServiceType> ServiceTypes { get; set; }
-        public DbSet<Hospital> Hospitals { get; set; }
+        public DbSet<Service> Services { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
