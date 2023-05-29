@@ -3218,11 +3218,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\API.csproj",
+      "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\API\\API.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\obj\\",
+      "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3239,11 +3239,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj"
+            "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj"
             },
-            "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

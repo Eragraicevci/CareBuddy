@@ -47,5 +47,32 @@ namespace Infrastructure.Data
             await userManager.CreateAsync(admin, "Pa$$w0rd");
             await userManager.AddToRolesAsync(admin, new[] {"Admin", "Doctor"});
         }
+
+
+         public static async Task SeedAsync(DataContext context)
+        {
+            if (!context.Hospitals.Any())
+            {
+                var hospitalData = File.ReadAllText("../Infrastructure/Data/SeedData/hospitals.json");
+                var hospitals = JsonSerializer.Deserialize<List<Hospital>>(hospitalData);
+                context.Hospitals.AddRange(hospitals);
+            }
+
+            if (!context.ServiceTypes.Any())
+            {
+                var typesData = File.ReadAllText("../Infrastructure/Data/SeedData/types.json");
+                var types = JsonSerializer.Deserialize<List<ServiceType>>(typesData);
+                context.ServiceTypes.AddRange(types);
+            }
+
+            if (!context.Services.Any())
+            {
+                var servicesData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
+                var services = JsonSerializer.Deserialize<List<Service>>(servicesData);
+                context.Services.AddRange(services);
+            }
+
+            if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
+        }
     }
 }

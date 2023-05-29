@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj": {}
+    "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj": {
+    "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\obj\\",
+        "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

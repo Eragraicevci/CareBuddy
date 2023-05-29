@@ -3191,11 +3191,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3212,8 +3212,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\Core\\Core.csproj"
+            "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\core\\CareBuddy\\Core\\Core.csproj"
             }
           }
         }
