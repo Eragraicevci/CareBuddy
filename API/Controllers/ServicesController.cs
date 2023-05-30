@@ -29,9 +29,10 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ServiceDto>>> GetServices()
+        public async Task<ActionResult<IReadOnlyList<ServiceDto>>> GetServices(
+            string sort, int? hospitalId, int? typeId)
         {
-            var spec = new ServiceTypeAndHospitalsSpecification();
+            var spec = new ServiceTypeAndHospitalsSpecification(sort, hospitalId, typeId);
 
             var services = await _servicesRepo.ListAsync(spec);
 
