@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-
+[ApiExplorerSettings(IgnoreApi = true)]
 public class WeatherForecastController : BaseApiController
 {
     private static readonly string[] Summaries = new[]

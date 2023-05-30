@@ -1,8 +1,11 @@
-using Infrastructure.Data;
+using API.Errors;
 using API.Helpers;
-using Core.Interfaces;
+using API.Repositories.Interfaces;
 using API.Services;
 using API.SignalR;
+using Core.Interfaces;
+using Infrastructure.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Extenstions
@@ -28,6 +31,28 @@ namespace API.Extenstions
             services.AddSignalR();
             services.AddSingleton<PresenceTracker>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IServiceRepository, ServiceRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddSwaggerGen();
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = actionContext =>
+            {
+                var errors = actionContext.ModelState
+                .Where(e => e.Value.Errors.Count > 0)
+                .SelectMany(x => x.Value.Errors)
+                .Select(x => x.ErrorMessage).ToArray();
+
+                var errorResponse = new ApiValidationErrorResponse
+                {
+                    Errors = errors
+                };
+
+                return new BadRequestObjectResult(errorResponse);
+            };
+            });
 
 
             return services;

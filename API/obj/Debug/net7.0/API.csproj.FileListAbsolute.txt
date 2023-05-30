@@ -312,3 +312,9 @@ C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Infrastructure.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Infrastructure.pdb
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Core.pdb
 C:\Users\PC\OneDrive\Desktop\care\CareBuddy\API\bin\Debug\net7.0\API.staticwebassets.runtime.json
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\API.staticwebassets.runtime.json
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Admin\Desktop\CareBuddy\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs
