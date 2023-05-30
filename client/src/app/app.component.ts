@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from './_services/account.service';
 import { User } from './models/user';
+import { HttpClient } from '@angular/common/http';
+import { Service } from './models/service';
+import { Pagination } from './models/pagination';
+import { ServicePagination } from './models/servicePagination';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +14,13 @@ import { User } from './models/user';
 export class AppComponent implements OnInit {
   title = 'CareBuddy';
 
-  constructor( private accountService: AccountService) { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.setCurrentUser();
+
   }
+
 
 
   setCurrentUser() {
