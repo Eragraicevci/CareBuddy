@@ -1,4 +1,5 @@
 using API.Errors;
+using API.Helpers;
 using API.Repositories.Interfaces;
 using AutoMapper;
 using Core.DTOs;
@@ -29,30 +30,35 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ServiceDto>>> GetServices(
-            string sort, int? hospitalId, int? typeId)
+        public async Task<ActionResult<Pagination<ServiceDto>>> GetServices(
+            [FromQuery] ServiceSpecParams serviceParams)
         {
-            var spec = new ServiceTypeAndHospitalsSpecification(sort, hospitalId, typeId);
+            var spec = new ServiceTypeAndHospitalsSpecification(serviceParams);
+            var countSpec = new ServicesWithFiltersForCountSpecification(serviceParams);
 
+            var totalItems = await _servicesRepo.CountAsync(countSpec);
             var services = await _servicesRepo.ListAsync(spec);
 
-            return Ok(_mapper.Map<IReadOnlyList<ServiceDto>>(services));
+            var data = _mapper.Map<IReadOnlyList<ServiceDto>>(services);
+
+            return Ok(new Pagination<ServiceDto>(serviceParams.PageIndex,
+                serviceParams.PageSize, totalItems, data));
         }
+
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ServiceDto>> GetService(int id)
         {
             var spec = new ServiceTypeAndHospitalsSpecification(id);
 
-            var service =  await _servicesRepo.GetEntityWithSpec(spec);
+            var service = await _servicesRepo.GetEntityWithSpec(spec);
 
-            if(service==null) return NotFound(new ApiResponse(404));
+            if (service == null)
+                return NotFound(new ApiResponse(404));
 
             return _mapper.Map<Service, ServiceDto>(service);
-
-             
         }
 
         [HttpGet("hospitals")]

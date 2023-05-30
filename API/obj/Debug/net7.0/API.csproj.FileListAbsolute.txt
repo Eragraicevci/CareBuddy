@@ -318,3 +318,8 @@ C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swa
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Admin\Desktop\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Admin\Desktop\CareBuddy\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs

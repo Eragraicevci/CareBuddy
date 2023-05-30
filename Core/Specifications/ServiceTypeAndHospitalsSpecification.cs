@@ -5,20 +5,31 @@ namespace Core.Specifications
 {
     public class ServiceTypeAndHospitalsSpecification : BaseSpecification<Service>
     {
-        public ServiceTypeAndHospitalsSpecification(string sort, int? hospitalId, int? typeId)
-        : base(x =>
-           
-            (!hospitalId.HasValue || x.HospitalId == hospitalId) &&
-            (!typeId.HasValue || x.ServiceTypeId == typeId)
+        public ServiceTypeAndHospitalsSpecification(ServiceSpecParams serviceParams)
+            : base(
+                x =>
+                    (
+                        string.IsNullOrEmpty(serviceParams.Search)
+                        || x.Name.ToLower().Contains(serviceParams.Search)
+                    )
+                    && (
+                        !serviceParams.HospitalId.HasValue
+                        || x.HospitalId == serviceParams.HospitalId
+                    )
+                    && (!serviceParams.TypeId.HasValue || x.ServiceTypeId == serviceParams.TypeId)
             )
         {
             AddInclude(x => x.ServiceType);
             AddInclude(x => x.Hospital);
             AddOrderBy(x => x.Name);
+            ApplyPaging(
+                serviceParams.PageSize * (serviceParams.PageIndex - 1),
+                serviceParams.PageSize
+            );
 
-             if (!string.IsNullOrEmpty(sort))
+            if (!string.IsNullOrEmpty(serviceParams.Sort))
             {
-                switch (sort)
+                switch (serviceParams.Sort)
                 {
                     case "priceAsc":
                         AddOrderBy(p => p.Price);
@@ -33,8 +44,7 @@ namespace Core.Specifications
             }
         }
 
-        public ServiceTypeAndHospitalsSpecification(int id) 
-        : base(x => x.Id == id)
+        public ServiceTypeAndHospitalsSpecification(int id) : base(x => x.Id == id)
         {
             AddInclude(x => x.ServiceType);
             AddInclude(x => x.Hospital);

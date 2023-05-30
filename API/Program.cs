@@ -30,6 +30,8 @@ app.UseStatusCodePagesWithReExecute("/errors/{0}");
     app.UseSwagger();
     app.UseSwaggerUI();
 
+app.UseCors("CorsPolicy");
+
 app.UseCors(builder => builder
     .WithOrigins("http://localhost:4200")
     .AllowAnyHeader()
