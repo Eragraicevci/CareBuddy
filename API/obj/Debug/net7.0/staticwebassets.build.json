@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N7yqxGB+sygUgVP1zMES1ymWCNYgn7lXe2590H1NZoU=",
+  "Hash": "uV1SW1WNi9z8nPkgt0oZVRhNCMgCFlBnE5ZeU5dfGUo=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "API\\wwwroot",
       "Source": "API",
-      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\Care\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\Care\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
+      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\Care\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/bloodAnalysis.jpg",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\bloodAnalysis.jpg"
     },
     {
-      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\Care\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
+      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\Care\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/dental.jpg",
       "AssetKind": "All",

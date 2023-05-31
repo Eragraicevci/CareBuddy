@@ -34,6 +34,7 @@ import { AdminComponent } from './_services/admin/admin.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { BookModule } from './book/book.module';
+//import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [

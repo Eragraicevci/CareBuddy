@@ -11,9 +11,14 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { PagingHeaderComponent } from '../shared/paging-header/paging-header.component';
+import { PagerComponent } from '../shared/pager/pager.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PagingHeaderComponent,
+    PagerComponent
+  ],
   imports: [
     CommonModule,
     BsDropdownModule.forRoot(),
@@ -44,7 +49,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PaginationModule,
     ButtonsModule,
     TimeagoModule,
-    ModalModule
+    ModalModule,
+    PagingHeaderComponent,
+    PagerComponent
     
   ]
 })

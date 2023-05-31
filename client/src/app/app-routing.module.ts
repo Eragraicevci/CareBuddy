@@ -14,6 +14,8 @@ import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.gu
 import { MemberDetailedResolver } from './_resolvers/member-detailed.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminGuard } from './_guards/admin.guard';
+import { BookComponent } from './book/book.component';
+import { ServiceDetailsComponent } from './book/service-details/service-details.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
       { path: 'member/edit', component: MemberEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
       { path: 'lists', component: ListsComponent },
       { path: 'messages', component: MessagesComponent },
+  { path: 'book', component: BookComponent },
+  { path: 'book/:id', component: ServiceDetailsComponent },
       { path: 'admin', component: AdminPanelComponent, canActivate:[AdminGuard] },
     ]
   },
@@ -35,6 +39,7 @@ const routes: Routes = [
   { path: 'not-found', component: NotFoundComponent },
   { path: 'server-error', component: ServerErrorComponent },
   { path: '**', component: NotFoundComponent, pathMatch: 'full' },
+  
 ];
 
 @NgModule({
