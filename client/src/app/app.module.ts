@@ -33,8 +33,7 @@ import { PhotoManagementComponent } from './admin/photo-management/photo-managem
 import { AdminComponent } from './_services/admin/admin.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
-import { BookModule } from './book/book.module';
-//import { HomeModule } from './home/home.module';
+
 
 @NgModule({
   declarations: [
@@ -70,8 +69,7 @@ import { BookModule } from './book/book.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule,
-    BookModule
+    SharedModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

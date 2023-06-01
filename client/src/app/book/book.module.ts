@@ -4,6 +4,8 @@ import { BookComponent } from './book.component';
 import { ServiceItemComponent } from './service-item/service-item.component';
 import { SharedModule } from '../_modules/shared.module';
 import { ServiceDetailsComponent } from './service-details/service-details.component';
+import { RouterModule } from '@angular/router';
+import { BookRoutingModule } from './book-routing.module';
 
 
 
@@ -15,10 +17,8 @@ import { ServiceDetailsComponent } from './service-details/service-details.compo
   ],
   imports: [
     CommonModule,
-    SharedModule
-  ],
-  exports: [
-    BookComponent
+    SharedModule,
+    BookRoutingModule
   ]
 })
 export class BookModule { }

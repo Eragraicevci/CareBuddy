@@ -52,4 +52,28 @@ export class TestErrorComponent implements OnInit {
       }
     })
   }
+
+  get404ErrorServices() {
+    this.http.get(this.baseUrl + 'services/42').subscribe({
+      next: response => console.log(response),
+      error: error => console.log(error)
+    })
+  }
+
+  get500ErrorServices() {
+    this.http.get(this.baseUrl + 'buggy/servererror').subscribe({
+      next: response => console.log(response),
+      error: error => console.log(error)
+    })
+  }
+
+  get400ValidationErrorServices() {
+    this.http.get(this.baseUrl + 'services/fortytwo').subscribe({
+      next: response => console.log(response),
+      error: error => {
+        console.log(error);
+        this.validationErrors = error.errors;
+      }
+    })
+  }
 }

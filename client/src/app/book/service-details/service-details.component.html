@@ -1,3 +1,16 @@
-<div *ngIf="service">
-    <h1>{{service.name}}</h1>
+<div class="row" *ngIf="service">
+    <div class="col-6">
+        <img src="{{service.pictureUrl}}" alt="{{service.name}}" class="w-100">
+    </div>
+    <div class="col-6 mt-5">
+        <h2>{{service.name}}</h2>
+        <p>{{service.price | currency}}</p>
+        <div class="d-flex justify-content-start align-items-center">
+            <button class="btn btn-outline-secondary">Book</button>
+        </div>
+        <div class="row mt-4">
+            <h4>Description</h4>
+            <p>{{service.description}}</p>
+        </div>
+    </div>
 </div>
