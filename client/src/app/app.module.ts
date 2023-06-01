@@ -33,49 +33,51 @@ import { PhotoManagementComponent } from './admin/photo-management/photo-managem
 import { AdminComponent } from './_services/admin/admin.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
+import { CoreModule } from "./core/core.module";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HomeComponent,
-    RegisterComponent,
-    MemberListComponent,
-    MemberDetailComponent,
-    ListsComponent,
-    MessagesComponent,
-    TestErrorComponent,
-    NotFoundComponent,
-    ServerErrorComponent,
-    MemberCardComponent,
-    MemberEditComponent,
-    PhotoEditorComponent,
-    TextInputComponent,
-    DatePickerComponent,
-    MemberMessagesComponent,
-    AdminPanelComponent,
-    HasRoleDirective,
-    UserManagementComponent,
-    PhotoManagementComponent,
-    AdminComponent,
-    RolesModalComponent,
-    ConfirmDialogComponent
-  ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule
-  ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavComponent,
+        HomeComponent,
+        RegisterComponent,
+        MemberListComponent,
+        MemberDetailComponent,
+        ListsComponent,
+        MessagesComponent,
+        TestErrorComponent,
+        NotFoundComponent,
+        ServerErrorComponent,
+        MemberCardComponent,
+        MemberEditComponent,
+        PhotoEditorComponent,
+        TextInputComponent,
+        DatePickerComponent,
+        MemberMessagesComponent,
+        AdminPanelComponent,
+        HasRoleDirective,
+        UserManagementComponent,
+        PhotoManagementComponent,
+        AdminComponent,
+        RolesModalComponent,
+        ConfirmDialogComponent
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        SharedModule,
+        CoreModule
+    ]
 })
 export class AppModule { }
