@@ -4,9 +4,11 @@ using API.Repositories.Interfaces;
 using API.Services;
 using API.SignalR;
 using Core.Interfaces;
+using Infrastructure;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 namespace API.Extenstions
 {
@@ -21,12 +23,18 @@ namespace API.Extenstions
             {
                 opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
+             services.AddSingleton<IConnectionMultiplexer>(c => 
+            {
+                var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
+                return ConnectionMultiplexer.Connect(options);
+            });
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddScoped<IAnalysisResultFileService, AnalysisResultFileService>();
+            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<LogUserActivity>();
             services.AddSignalR();
             services.AddSingleton<PresenceTracker>();

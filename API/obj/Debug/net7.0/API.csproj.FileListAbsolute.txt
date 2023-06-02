@@ -323,3 +323,5 @@ C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.Asp
 C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\PC\OneDrive\Desktop\Care\CareBuddy\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC\OneDrive\Desktop\care\CareBuddy\API\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\PC\OneDrive\Desktop\care\CareBuddy\API\bin\Debug\net7.0\StackExchange.Redis.dll
