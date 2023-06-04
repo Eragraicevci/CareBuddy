@@ -29,6 +29,7 @@ const routes: Routes = [
       { path: 'lists', component: ListsComponent },
       { path: 'messages', component: MessagesComponent },
       { path: 'book', loadChildren: () => import('./book/book.module').then(m => m.BookModule) },
+      { path: 'patientAppointment', loadChildren: () => import('./patient-appointment/patient-appointment.module').then(m => m.PatientAppointmentModule) },
       { path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard] },
     ]
   },

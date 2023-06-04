@@ -13,11 +13,13 @@ import { TimeagoModule } from 'ngx-timeago';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { PagingHeaderComponent } from '../shared/paging-header/paging-header.component';
 import { PagerComponent } from '../shared/pager/pager.component';
+import { BookTotalsComponent } from '../shared/book-totals/book-totals.component';
 
 @NgModule({
   declarations: [
     PagingHeaderComponent,
-    PagerComponent
+    PagerComponent,
+    BookTotalsComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,8 @@ import { PagerComponent } from '../shared/pager/pager.component';
     TimeagoModule,
     ModalModule,
     PagingHeaderComponent,
-    PagerComponent
+    PagerComponent,
+    BookTotalsComponent
     
   ]
 })

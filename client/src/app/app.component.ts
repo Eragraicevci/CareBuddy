@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Service } from './models/service';
 import { Pagination } from './models/pagination';
 import { ServicePagination } from './models/servicePagination';
+import { PatientAppointment } from './models/patientAppointment';
+import { PatientAppointmentService } from './patientAppointment/patient-appointment.service';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +16,12 @@ import { ServicePagination } from './models/servicePagination';
 export class AppComponent implements OnInit {
   title = 'CareBuddy';
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private patientAppointmentService: PatientAppointmentService) { }
 
   ngOnInit(): void {
     this.setCurrentUser();
-
+    const patientAppointmentId = localStorage.getItem('patientAppointment_id');
+    if (patientAppointmentId) this.patientAppointmentService.getPatientAppointment(patientAppointmentId);
   }
 
 
