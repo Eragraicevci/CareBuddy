@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Appointment } from '../models/patientAppointment';
+import { Appointment, PatientAppointment } from '../models/patientAppointment';
 import { PatientAppointmentService } from './patient-appointment.service';
 
 @Component({
@@ -10,12 +10,11 @@ import { PatientAppointmentService } from './patient-appointment.service';
 export class PatientAppointmentComponent {
 
   constructor(public patientAppointmentService: PatientAppointmentService) {}
+//  /* incrementQuantity(item: Appointment) {
+//     this.patientAppointmentService.addItemToPatientAppointment(item);
+//   }*/
 
- /* incrementQuantity(item: Appointment) {
-    this.patientAppointmentService.addItemToPatientAppointment(item);
-  }*/
-
-  removeItem(id: number) {
-    this.patientAppointmentService.removeAppointmentFromPatientAppointment(id);
-  }
+//   removeItem(id: number) {
+//     this.patientAppointmentService.removeAppointmentFromPatientAppointment(id);
+//   }
 }

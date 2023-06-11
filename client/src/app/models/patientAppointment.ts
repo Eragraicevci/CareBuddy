@@ -4,6 +4,7 @@ export interface Appointment{
     id:number;
     serviceName:string;
     price:number;
+    capacity:number;
     pictureUrl:string;
     hospital:string;
     type:string;

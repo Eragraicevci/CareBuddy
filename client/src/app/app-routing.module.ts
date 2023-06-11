@@ -30,6 +30,7 @@ const routes: Routes = [
       { path: 'messages', component: MessagesComponent },
       { path: 'book', loadChildren: () => import('./book/book.module').then(m => m.BookModule) },
       { path: 'patientAppointment', loadChildren: () => import('./patient-appointment/patient-appointment.module').then(m => m.PatientAppointmentModule) },
+      { path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule) },
       { path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard] },
     ]
   },

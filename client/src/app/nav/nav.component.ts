@@ -16,6 +16,11 @@ export class NavComponent implements OnInit {
   constructor(public accountService: AccountService, private router: Router,
     private toastr: ToastrService, public patientAppointmentService: PatientAppointmentService) { }
 
+    getCount(items: Appointment[]) {
+      return items.reduce((sum, item) => sum + item.capacity, 0);
+    }
+  
+
   ngOnInit(): void {
   }
 

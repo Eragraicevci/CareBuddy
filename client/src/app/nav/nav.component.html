@@ -1,13 +1,13 @@
-     <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
     <div class="container">
         <a class="navbar-brand" routerLink="/" routerLinkActive="active">CareBuddy</a>
-  
-     
+
+
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <ng-container *ngIf="accountService.currentUser$  | async">
-               
+
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/book" routerLinkActive="active" >Services</a>
+                    <a class="nav-link" routerLink="/book" routerLinkActive="active">Services</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/members" [routerLinkActiveOptions]="{exact:true}"
@@ -16,15 +16,19 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
                 </li>
-                <li class="nav-item"> 
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
                 </li>
                 <li *appHasRole="['Admin']" class="nav-item">
                     <a class="nav-link" routerLink="/admin" routerLinkActive="active" id="admin">Admin</a>
                 </li>
-                <li class="nav-item"> 
-                    <a class="nav-link" routerLink="/patientAppointment" routerLinkActive="active">My Appointments</a>
-                </li>
+
+                <div class="d-flex align-items-center">
+                    <a class="nav-link" routerLink="/patientAppointment">My Appointments
+                        <div *ngIf="(patientAppointmentService.patientAppointmentSource$ | async) as patientAppointment" class="cart-no">
+                        </div>
+                    </a>
+                </div>
             </ng-container>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
@@ -33,7 +37,8 @@
 
         <div class="dropdown" *ngIf="(accountService.currentUser$  | async) as user" dropdown>
             <img src="{{user.photo || './assets/user.png'}}" alt="user photo">
-            <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle id="welcome" >Welcome {{user.knownAs}} </a>
+            <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle id="welcome">Welcome
+                {{user.knownAs}} </a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a class="dropdown-item" routerLink="/member/edit" id="editProfile">Edit Profile</a>
                 <a class="dropdown-item" (click)="logout()">Logout</a>

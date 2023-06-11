@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import { Service } from 'src/app/models/service';
 import { ActivatedRoute } from '@angular/router';
+import { BreadcrumbService } from 'xng-breadcrumb';
+import { PatientAppointmentService } from 'src/app/patientAppointment/patient-appointment.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-service-details',
@@ -10,9 +13,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ServiceDetailsComponent implements OnInit {
   service?: Service;
+  capacity = 1;
+  capacityInPatientAppointment = 0;
 
-  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) {}
+  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute, 
+    private bcService: BreadcrumbService, private patientAppointmentService: PatientAppointmentService) {
+    this.bcService.set('@serviceDetails', ' ')
+  }
 
+
+  addItemToPatientAppointment() {
+    this.service && this.patientAppointmentService.addItemToPatientAppointment(this.service);
+  }
   ngOnInit(): void {
     this.loadService();
   }
