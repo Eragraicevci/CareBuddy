@@ -38,7 +38,21 @@ namespace API.Helpers
             CreateMap<AnalysisResultFile, AnalysisResultFileDTO>();
             CreateMap<MemberUpdateDto, AppUser>();
             CreateMap<RegisterDto, AppUser>();
-            CreateMap<PatientInfoDto, PatientInfo>();
+            CreateMap<PatientInfoDto, Core.Entities.BookingAggregate.PatientInfo>();
+            // CreateMap<PatientInfoDto, PatientInfo>();
+            CreateMap<Booking, BookingToReturnDto>()
+                .ForMember(d => d.AppointmentType, o => o.MapFrom(s => s.AppointmentType.ShortName))
+                .ForMember(
+                    d => d.AppointmentTypePrice,
+                    o => o.MapFrom(s => s.AppointmentType.Price)
+                );
+
+            CreateMap<BookingItem, BookingItemDto>()
+                .ForMember(d => d.ServiceId, o => o.MapFrom(s => s.ItemBooked.ServiceItemId))
+                .ForMember(d => d.ServiceName, o => o.MapFrom(s => s.ItemBooked.ServiceName))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.ItemBooked.PictureUrl));
+//  .ForMember(d => d.PictureUrl, o => o.MapFrom<OrderItemUrlResolver>());
+
             CreateMap<Message, MessageDto>()
                 .ForMember(
                     d => d.SenderPhotoUrl,

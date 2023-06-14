@@ -1,12 +1,18 @@
+using Core.Entities.BookingAggregate;
+
 namespace Core.Entities.BookingAggregate
 {
     public class Booking : BaseEntity
     {
-        public Booking()
-        {
-        }
-        public Booking(IReadOnlyList<BookingItem> bookingItems, string patientUsername, PatientInfo info, 
-            AppointmentType appointmentType, decimal subtotal)
+        public Booking() { }
+
+        public Booking(
+            IReadOnlyList<BookingItem> bookingItems,
+            string patientUsername,
+            PatientInfo info,
+            AppointmentType appointmentType,
+            decimal subtotal
+        )
         {
             PatientUsername = patientUsername;
             Info = info;
@@ -19,7 +25,7 @@ namespace Core.Entities.BookingAggregate
         public DateTime BookedDate { get; set; } = DateTime.UtcNow;
 
         public PatientInfo Info { get; set; }
-         public AppointmentType AppointmentType { get; set; }
+        public AppointmentType AppointmentType { get; set; }
         public IReadOnlyList<BookingItem> BookingItems { get; set; }
         public decimal Subtotal { get; set; }
         public BookingStatus Status { get; set; } = BookingStatus.Pending;

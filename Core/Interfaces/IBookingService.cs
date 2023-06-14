@@ -6,7 +6,7 @@ namespace Core.Interfaces
     {
         Task<Booking> CreateBookingAsync(string patientUsername, int appointmentType, 
         string appointmentId, PatientInfo info);
-        Task<IReadOnlyList<Booking>> GetBookingsForUserAsync(string patientUsername);
+        Task<IReadOnlyList<Booking>> GetBookingsForPatientAsync(string patientUsername);
         Task<Booking> GetBookingByIdAsync(int id, string patientUsername);
         Task<IReadOnlyList<AppointmentType>> GetAppointmentTypesAsync();
     }
