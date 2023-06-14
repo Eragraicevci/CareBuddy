@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "ShortName": "Standard",
+    "Description": "Appointment within one week",
+    "Time": "5-7 days",
+    "Price": 0
+  },
+  {
+    "Id": 2,
+    "ShortName": "Priority",
+    "Description": "Get it within 5 days",
+    "Time": "2-5 Days",
+    "Price": 10
+  },
+
+  {
+    "Id": 3,
+    "ShortName": "Immediate",
+    "Description": "Fastest appointment time",
+    "Time": "1-2 days",
+    "Price": 15
+  }
+]

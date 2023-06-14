@@ -2,6 +2,8 @@ using Core.DTOs;
 using Core.Entities;
 using API.Extensions;
 using AutoMapper;
+using Core.Dtos;
+using Core.Entities.BookingAggregate;
 
 namespace API.Helpers
 {
@@ -36,6 +38,7 @@ namespace API.Helpers
             CreateMap<AnalysisResultFile, AnalysisResultFileDTO>();
             CreateMap<MemberUpdateDto, AppUser>();
             CreateMap<RegisterDto, AppUser>();
+            CreateMap<PatientInfoDto, PatientInfo>();
             CreateMap<Message, MessageDto>()
                 .ForMember(
                     d => d.SenderPhotoUrl,

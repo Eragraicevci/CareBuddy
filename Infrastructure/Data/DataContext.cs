@@ -1,5 +1,6 @@
 using System.Reflection;
 using Core.Entities;
+using Core.Entities.BookingAggregate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -25,10 +26,15 @@ namespace Infrastructure.Data
 
         public DbSet<Group> Groups { get; set; }
         public DbSet<Connection> Connections { get; set; }
-public DbSet<Hospital> Hospitals { get; set; }
-        
+        public DbSet<Hospital> Hospitals { get; set; }
+
         public DbSet<ServiceType> ServiceTypes { get; set; }
         public DbSet<Service> Services { get; set; }
+
+        public DbSet<Booking> Bookings { get; set; }
+
+         public DbSet<BookingItem> BookingItems { get; set; }
+         public DbSet<AppointmentType> AppointmentTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -78,7 +84,7 @@ public DbSet<Hospital> Hospitals { get; set; }
                 .WithMany(m => m.MessagesSent)
                 .OnDelete(DeleteBehavior.Restrict);
 
-                
+
             if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {
                 foreach (var entityType in builder.Model.GetEntityTypes())

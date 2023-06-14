@@ -207,6 +207,83 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
 
+            modelBuilder.Entity("Core.Entities.BookingAggregate.AppointmentType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ShortName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Time")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppointmentTypes");
+                });
+
+            modelBuilder.Entity("Core.Entities.BookingAggregate.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("AppointmentTypeId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("BookedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PatientUsername")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PaymentIntentId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Subtotal")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppointmentTypeId");
+
+                    b.ToTable("Bookings");
+                });
+
+            modelBuilder.Entity("Core.Entities.BookingAggregate.BookingItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("BookingId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("BookingItems");
+                });
+
             modelBuilder.Entity("Core.Entities.Connection", b =>
                 {
                     b.Property<string>("ConnectionId")
@@ -363,7 +440,7 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Price")
+                    b.Property<double>("Price")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ServiceTypeId")
@@ -532,6 +609,84 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Core.Entities.BookingAggregate.Booking", b =>
+                {
+                    b.HasOne("Core.Entities.BookingAggregate.AppointmentType", "AppointmentType")
+                        .WithMany()
+                        .HasForeignKey("AppointmentTypeId");
+
+                    b.OwnsOne("Core.Entities.BookingAggregate.PatientInfo", "Info", b1 =>
+                        {
+                            b1.Property<int>("BookingId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("Address")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("ContactInfo")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("CurrentMedication")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("FirstName")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("LastName")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("MedicalHistory")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<string>("Symptoms")
+                                .HasColumnType("TEXT");
+
+                            b1.HasKey("BookingId");
+
+                            b1.ToTable("Bookings");
+
+                            b1.WithOwner()
+                                .HasForeignKey("BookingId");
+                        });
+
+                    b.Navigation("AppointmentType");
+
+                    b.Navigation("Info")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Core.Entities.BookingAggregate.BookingItem", b =>
+                {
+                    b.HasOne("Core.Entities.BookingAggregate.Booking", null)
+                        .WithMany("BookingItems")
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.OwnsOne("Core.Entities.BookedAggregate.ServiceItemBooked", "ItemBooked", b1 =>
+                        {
+                            b1.Property<int>("BookingItemId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("PictureUrl")
+                                .HasColumnType("TEXT");
+
+                            b1.Property<int>("ServiceItemId")
+                                .HasColumnType("INTEGER");
+
+                            b1.Property<string>("ServiceName")
+                                .HasColumnType("TEXT");
+
+                            b1.HasKey("BookingItemId");
+
+                            b1.ToTable("BookingItems");
+
+                            b1.WithOwner()
+                                .HasForeignKey("BookingItemId");
+                        });
+
+                    b.Navigation("ItemBooked");
+                });
+
             modelBuilder.Entity("Core.Entities.Connection", b =>
                 {
                     b.HasOne("Core.Entities.Group", null)
@@ -678,6 +833,11 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("Photos");
 
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("Core.Entities.BookingAggregate.Booking", b =>
+                {
+                    b.Navigation("BookingItems");
                 });
 
             modelBuilder.Entity("Core.Entities.Group", b =>

@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Core.Entities;
+using Core.Entities.BookingAggregate;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -70,6 +71,13 @@ namespace Infrastructure.Data
                 var servicesData = File.ReadAllText("../Infrastructure/Data/SeedData/services.json");
                 var services = JsonSerializer.Deserialize<List<Service>>(servicesData);
                 context.Services.AddRange(services);
+            }
+
+             if (!context.AppointmentTypes.Any())
+            {
+                var appointmentTypesData = File.ReadAllText("../Infrastructure/Data/SeedData/appointmentTypes.json");
+                var types = JsonSerializer.Deserialize<List<AppointmentType>>(appointmentTypesData);
+                context.AppointmentTypes.AddRange(types);
             }
 
             if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
