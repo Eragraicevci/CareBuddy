@@ -50,8 +50,7 @@ namespace API.Helpers
             CreateMap<BookingItem, BookingItemDto>()
                 .ForMember(d => d.ServiceId, o => o.MapFrom(s => s.ItemBooked.ServiceItemId))
                 .ForMember(d => d.ServiceName, o => o.MapFrom(s => s.ItemBooked.ServiceName))
-                .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.ItemBooked.PictureUrl));
-//  .ForMember(d => d.PictureUrl, o => o.MapFrom<OrderItemUrlResolver>());
+ .ForMember(d => d.PictureUrl, o => o.MapFrom<BookingItemUrlResolver>());
 
             CreateMap<Message, MessageDto>()
                 .ForMember(
