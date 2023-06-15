@@ -1,0 +1,17 @@
+<div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
+    <div class="row" formGroupName="appointmentType">
+        <div class="col-6 form-group" *ngFor="let type of appointmentTypes">
+            <input type="radio"
+                id={{type.id}}
+                value={{type.id}}
+                formControlName="appointmentType"
+                class="form-check-input"
+            >
+            <label for="{{type.id}}" class="form-check-label ms-2 mb-3">
+                <strong>{{type.shortName}} - {{type.price | currency}}</strong>
+                <br />
+                <span class="label-description">{{type.description}}</span>
+            </label>
+        </div>
+    </div>
+</div>

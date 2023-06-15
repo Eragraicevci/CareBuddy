@@ -1,0 +1,41 @@
+<div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4>Personal Information</h4>
+        <button class="btn btn-outline-success mb-3"
+        >
+            Save as default information
+        </button>
+    </div>
+    <div class="row" formGroupName="infoForm">
+        <div class="form-group col-6">
+            <app-text-input [label]="'First name'" formControlName="firstName"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Last name'" formControlName="lastName"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Contact Information'" formControlName="contactInfo"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Address'" formControlName="address"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Medical History'" formControlName="medicalHistory"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Current Medication'" formControlName="currentMedication"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Symptoms'" formControlName="symptoms"></app-text-input>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between flex-row mb-5">
+    <button class="btn btn-outline-primary" routerLink="/appointment">
+        <i class="fa fa-angle-left"></i> Back to appointments
+    </button>
+    <button class="btn btn-primary" cdkStepperNext>
+        Go to Appointment Type <i class="fa fa-angle-right"></i> 
+    </button>
+</div>

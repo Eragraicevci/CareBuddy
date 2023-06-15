@@ -16,13 +16,19 @@ import { PagerComponent } from '../shared/pager/pager.component';
 import { BookTotalsComponent } from '../shared/book-totals/book-totals.component';
 import { StepperComponent } from '../shared/components/stepper/stepper.component';
 import {CdkStepperModule} from '@angular/cdk/stepper';
+import { TextInputComponent } from '../_forms/text-input/text-input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PatientAppointmentSummaryComponent } from '../shared/patient-appointment-summary/patient-appointment-summary.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     PagingHeaderComponent,
     PagerComponent,
     BookTotalsComponent,
-    StepperComponent
+    StepperComponent,
+    TextInputComponent,
+        PatientAppointmentSummaryComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +47,9 @@ import {CdkStepperModule} from '@angular/cdk/stepper';
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot(),
     ModalModule.forRoot(),
-    CdkStepperModule
+    CdkStepperModule,
+    ReactiveFormsModule,
+    RouterModule
     
   ],
   exports: [
@@ -60,7 +68,10 @@ import {CdkStepperModule} from '@angular/cdk/stepper';
     PagerComponent,
     BookTotalsComponent,
     StepperComponent,
-    CdkStepperModule
+    CdkStepperModule,
+    TextInputComponent,
+    ReactiveFormsModule,
+    PatientAppointmentSummaryComponent
 
     
   ]

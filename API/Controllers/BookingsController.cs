@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using API.Extenstions;
 using Core.Dtos;
 using Core.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
+    [Authorize]
     public class BookingsController : BaseApiController
     {
         private readonly IBookingService _bookingService;
