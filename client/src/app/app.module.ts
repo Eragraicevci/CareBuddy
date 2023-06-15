@@ -35,7 +35,6 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { CoreModule } from "./core/core.module";
 
-
 @NgModule({
     declarations: [
         AppComponent,

@@ -14,12 +14,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { PagingHeaderComponent } from '../shared/paging-header/paging-header.component';
 import { PagerComponent } from '../shared/pager/pager.component';
 import { BookTotalsComponent } from '../shared/book-totals/book-totals.component';
+import { StepperComponent } from '../shared/components/stepper/stepper.component';
+import {CdkStepperModule} from '@angular/cdk/stepper';
 
 @NgModule({
   declarations: [
     PagingHeaderComponent,
     PagerComponent,
-    BookTotalsComponent
+    BookTotalsComponent,
+    StepperComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,8 @@ import { BookTotalsComponent } from '../shared/book-totals/book-totals.component
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CdkStepperModule
     
   ],
   exports: [
@@ -54,7 +58,10 @@ import { BookTotalsComponent } from '../shared/book-totals/book-totals.component
     ModalModule,
     PagingHeaderComponent,
     PagerComponent,
-    BookTotalsComponent
+    BookTotalsComponent,
+    StepperComponent,
+    CdkStepperModule
+
     
   ]
 })
