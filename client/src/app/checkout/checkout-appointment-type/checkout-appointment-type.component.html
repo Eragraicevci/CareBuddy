@@ -1,5 +1,5 @@
 <div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
-    <div class="row" formGroupName="appointmentType">
+    <div class="row" formGroupName="appointmentTypeForm">
         <div class="col-6 form-group" *ngFor="let type of appointmentTypes">
             <input type="radio"
                 id={{type.id}}

@@ -13,7 +13,7 @@ export class CheckoutService {
 
   constructor(private http: HttpClient) { }
 
-  createOrder(booking: BookingToCreate) {
+  createBooking(booking: BookingToCreate) {
     return this.http.post<Booking>(this.baseUrl + 'bookings', booking);
   }
 

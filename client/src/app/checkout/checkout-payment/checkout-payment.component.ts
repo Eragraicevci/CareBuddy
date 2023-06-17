@@ -24,7 +24,7 @@ export class CheckoutPaymentComponent {
     if (!patientAppointment) return;
     const bookingToCreate = this.getBookingToCreate(patientAppointment);
     if (!bookingToCreate) return;
-    this.checkoutService.createOrder(bookingToCreate).subscribe({
+    this.checkoutService.createBooking(bookingToCreate).subscribe({
       next: booking => {
         this.toastr.success('Booking created successfully');
         // this.patientAppointmentService.deletePatientAppointment();
@@ -34,7 +34,7 @@ export class CheckoutPaymentComponent {
     })
   }
   getBookingToCreate(patientAppointment: PatientAppointment) {
-    const appointmentTypeId = this.checkoutForm?.get('appointmentType')?.get('appointmentType')?.value;
+    const appointmentTypeId = this.checkoutForm?.get('appointmentTypeForm')?.get('appointmentType')?.value;
     const info = this.checkoutForm?.get('infoForm')?.value as User;
     if (!appointmentTypeId || !info) return;
     return {
