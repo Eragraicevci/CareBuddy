@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Appointment } from 'src/app/models/patientAppointment';
 import { PatientAppointmentService } from 'src/app/patientAppointment/patient-appointment.service';
 
@@ -10,6 +10,7 @@ import { PatientAppointmentService } from 'src/app/patientAppointment/patient-ap
 export class PatientAppointmentSummaryComponent{
   @Output() addItem = new EventEmitter<Appointment>();
   @Output() removeItem = new EventEmitter<{id: number, capacity: number}>();
+  @Input() isPatientAppointment = true;
 
 
   constructor(public patientAppointmentService: PatientAppointmentService) {}

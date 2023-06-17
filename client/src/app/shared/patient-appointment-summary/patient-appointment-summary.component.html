@@ -1,11 +1,11 @@
 
 <div class="table-responsive" *ngIf="(patientAppointmentService.patientAppointmentSource$ | async) as patientAppointment">
     <table class="table">
-        <thead class="bg-light text-uppercase">
+        <thead class="text-uppercase" [class.bg-light]="isPatientAppointment">
             <tr>
                 <th><div class="py-2">Service</div></th>
                 <th><div class="py-2">Price</div></th>
-                <th><div class="py-2">Remove</div></th>
+                <th *ngIf="isPatientAppointment"><div class="py-2">Remove</div></th>
             </tr>
         </thead>
         <tbody>

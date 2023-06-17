@@ -5,6 +5,9 @@ using Core.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using Core.Entities.BookingAggregate;
+using Core.Dtos;
 
 namespace API.Controllers
 {
@@ -13,7 +16,12 @@ namespace API.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, IMapper mapper)
+
+        public AccountController(
+            UserManager<AppUser> userManager,
+            ITokenService tokenService,
+            IMapper mapper
+        )
         {
             _userManager = userManager;
             _mapper = mapper;
@@ -23,7 +31,8 @@ namespace API.Controllers
         [HttpPost("register")] // POST: api/account/register?username=dave&password=pwd
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
-            if (await UserExists(registerDto.Username)) return BadRequest("Username is taken");
+            if (await UserExists(registerDto.Username))
+                return BadRequest("Username is taken");
 
             var user = _mapper.Map<AppUser>(registerDto);
 
@@ -31,11 +40,13 @@ namespace API.Controllers
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
-            if (!result.Succeeded) return BadRequest(result.Errors);
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
 
             var roleResult = await _userManager.AddToRoleAsync(user, "Pacient");
 
-            if (!roleResult.Succeeded) return BadRequest(result.Errors);
+            if (!roleResult.Succeeded)
+                return BadRequest(result.Errors);
 
             return new UserDto
             {
@@ -53,11 +64,13 @@ namespace API.Controllers
                 .Include(p => p.Photos)
                 .SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
 
-            if (user == null) return Unauthorized("invalid username");
+            if (user == null)
+                return Unauthorized("invalid username");
 
             var result = await _userManager.CheckPasswordAsync(user, loginDto.Password);
 
-            if (!result) return Unauthorized("Invalid password");
+            if (!result)
+                return Unauthorized("Invalid password");
 
             return new UserDto
             {
@@ -73,5 +86,7 @@ namespace API.Controllers
         {
             return await _userManager.Users.AnyAsync(x => x.UserName == username.ToLower());
         }
+
+        
     }
-  }
+}

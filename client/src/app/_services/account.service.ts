@@ -4,6 +4,7 @@ import { BehaviorSubject, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { PresenceService } from './presence.service';
+import { Member } from '../models/member';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class AccountService {
         }
       })
     )
-  } 
+  }
 
   setCurrentUser(user: User) {
     user.roles = [];
