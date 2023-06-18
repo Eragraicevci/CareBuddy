@@ -8,7 +8,7 @@
                 <cdk-step [label]="'AppointmentType'" [completed]="checkoutForm.get('appointmentTypeForm')?.valid">
                     <app-checkout-appointment-type [checkoutForm]="checkoutForm"></app-checkout-appointment-type>
                 </cdk-step>
-                <cdk-step [label]="'Review'" [completed]="checkoutForm.get('reviewForm')?.valid">
+                <cdk-step [label]="'Review'">
                     <app-checkout-review></app-checkout-review>
                 </cdk-step>
                 <cdk-step [label]="'Payment'" >

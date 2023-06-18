@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NavigationExtras, Router } from '@angular/router';
 import { PatientAppointment } from 'src/app/models/patientAppointment';
 import { User } from 'src/app/models/user';
+import { PatientInfo } from 'src/app/models/patientInfo';
 
 @Component({
   selector: 'app-checkout-payment',
@@ -35,7 +36,7 @@ export class CheckoutPaymentComponent {
   }
   getBookingToCreate(patientAppointment: PatientAppointment) {
     const appointmentTypeId = this.checkoutForm?.get('appointmentTypeForm')?.get('appointmentType')?.value;
-    const info = this.checkoutForm?.get('infoForm')?.value as User;
+    const info = this.checkoutForm?.get('infoForm')?.value as PatientInfo;
     if (!appointmentTypeId || !info) return;
     return {
       patientAppointmentId: patientAppointment.id,

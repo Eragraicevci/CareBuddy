@@ -1,9 +1,10 @@
+import { PatientInfo } from "./patientInfo";
 import { User } from "./user";
 
 export interface BookingToCreate {
     patientAppointmentId: string;
     appointmentTypeId: number;
-    info: User;
+    info: PatientInfo;
 }
 
 export interface Booking {
