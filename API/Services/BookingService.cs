@@ -1,4 +1,6 @@
- using Core.Entities;
+using System.Text.RegularExpressions;
+using API.Repositories.Interfaces;
+using Core.Entities;
 using Core.Entities.BookedAggregate;
 using Core.Entities.BookingAggregate;
 using Core.Interfaces;
@@ -10,11 +12,20 @@ namespace API.Services
     {
         private readonly IAppointmentRepository _appointmentRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IGenericRepository<Service> _serviceRepo;
+        private readonly IGenericRepository<AppointmentType> _atRepo;
 
-        public BookingService(IAppointmentRepository appointmentRepository, IUnitOfWork unitOfWork)
+        public BookingService(
+            IAppointmentRepository appointmentRepository,
+            IUnitOfWork unitOfWork,
+            IGenericRepository<Service> serviceRepo,
+            IGenericRepository<AppointmentType> atRepo
+        )
         {
+            _atRepo = atRepo ?? throw new ArgumentNullException(nameof(atRepo));
             _unitOfWork = unitOfWork;
             _appointmentRepository = appointmentRepository;
+            _serviceRepo = serviceRepo ?? throw new ArgumentNullException(nameof(serviceRepo));
         }
 
         public async Task<Booking> CreateBookingAsync(
@@ -24,53 +35,45 @@ namespace API.Services
             PatientInfo info
         )
         {
-            // get appointment from repo
             var appointment = await _appointmentRepository.GetAppointmentAsync(appointmentId);
 
-            // get items from the product repo
             var items = new List<BookingItem>();
-            foreach (var item in appointment.Items)
+            if (appointment != null && appointment.Items != null)
             {
-                var serviceItem = await _unitOfWork.Repository<Service>().GetByIdAsync(item.Id);
-                var itemBooked = new ServiceItemBooked(
-                    serviceItem.Id,
-                    serviceItem.Name,
-                    serviceItem.PictureUrl
-                );
-                var bookItem = new BookingItem(itemBooked, serviceItem.Price, item.Capacity);
-                items.Add(bookItem);
+                foreach (var item in appointment.Items)
+                {
+                    var serviceItem = await _serviceRepo.GetByIdAsync(item.Id);
+
+                    if (serviceItem != null)
+                    {
+                        var itemBooked = new ServiceItemBooked(
+                            serviceItem.Id,
+                            serviceItem.Name,
+                            serviceItem.PictureUrl
+                        );
+                        var bookingItem = new BookingItem(
+                            itemBooked,
+                            serviceItem.Price,
+                            item.Capacity
+                        );
+                        items.Add(bookingItem);
+                    }
+                }
             }
 
-            // get  appointment type from repo
-            var appointmentType = await _unitOfWork
-                .Repository<AppointmentType>()
-                .GetByIdAsync(appointmentTypeId);
+            var appointmentType = await _atRepo.GetByIdAsync(appointmentTypeId);
 
-            // calc subtotal
             var subtotal = items.Sum(item => item.Price * item.Capacity);
 
-            // create book
-            var book = new Booking(items, patientUsername, info, appointmentType, subtotal);
-            _unitOfWork.Repository<Booking>().Add(book);
+            var booking = new Booking(items, patientUsername, info, appointmentType, subtotal);
 
-            // save to db
-            var result = await _unitOfWork.Completee();
-
-            if (result <= 0)
-                return null;
-
-            // delete appointment
-            await _appointmentRepository.DeleteAppointmentAsync(appointmentId);
-
-            return book;
+            return booking;
         }
-
 
         public async Task<IReadOnlyList<AppointmentType>> GetAppointmentTypesAsync()
         {
             return await _unitOfWork.Repository<AppointmentType>().ListAllAsync();
         }
-
 
         public async Task<Booking> GetBookingByIdAsync(int id, string patientUsername)
         {
@@ -88,7 +91,7 @@ namespace API.Services
 
         public async Task<IReadOnlyList<Booking>> GetBookingsForPatientAsync(string patientUsername)
         {
-             var spec = new BookingsWithItemsAndBookingSpecification(patientUsername);
+            var spec = new BookingsWithItemsAndBookingSpecification(patientUsername);
 
             return await _unitOfWork.Repository<Booking>().ListAsync(spec);
         }

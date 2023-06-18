@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class BookingsController : BaseApiController
     {
         private readonly IBookingService _bookingService;
