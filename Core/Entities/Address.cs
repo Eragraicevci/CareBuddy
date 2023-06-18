@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Core.Entities
@@ -10,6 +11,8 @@ namespace Core.Entities
         public string City { get; set; }
         public string StreetName { get; set; }
         public int ZipCode { get; set; }
+
+        [Required]
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
     }

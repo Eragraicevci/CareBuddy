@@ -1,13 +1,13 @@
 import * as cuid from "cuid";
 
-export interface Appointment{
-    id:number;
-    serviceName:string;
-    price:number;
-    capacity:number;
-    pictureUrl:string;
-    hospital:string;
-    type:string;
+export interface Appointment {
+    id: number;
+    serviceName: string;
+    price: number;
+    pictureUrl: string;
+    capacity: number;
+    hospital: string;
+    type: string;
 }
 
 

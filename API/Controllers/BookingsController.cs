@@ -38,13 +38,13 @@ namespace API.Controllers
         }
 
          [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<BookingToReturnDto>>> GetBookingsForPatient()
+        public async Task<ActionResult<IReadOnlyList<Booking>>> GetBookingsForPatient()
         {
             var patientName = HttpContext.User.GetUsername();
 
             var bookings = await _bookingService.GetBookingsForPatientAsync(patientName);
 
-             return Ok(_mapper.Map<IReadOnlyList<BookingToReturnDto>>(bookings));
+             return Ok(bookings);
         }
 
 

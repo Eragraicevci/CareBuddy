@@ -10,11 +10,8 @@ import { PatientAppointmentService } from './patient-appointment.service';
 export class PatientAppointmentComponent {
 
   constructor(public patientAppointmentService: PatientAppointmentService) {}
-//  /* incrementQuantity(item: Appointment) {
-//     this.patientAppointmentService.addItemToPatientAppointment(item);
-//   }*/
 
-//   removeItem(id: number) {
-//     this.patientAppointmentService.removeAppointmentFromPatientAppointment(id);
-//   }
+  // removeItem(id: number) {
+  //   this.patientAppointmentService.removeAppointmentFromPatientAppointment(id);
+  // }
 }

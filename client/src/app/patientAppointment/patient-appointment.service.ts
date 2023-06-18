@@ -21,13 +21,6 @@ export class PatientAppointmentService {
 
   constructor(private http: HttpClient) { }
 
-  setAdditionalCostPrice(appointmentType: AppointmentType) {
-    this.additionalCosts = appointmentType.price;
-    this.calculateTotals();
-
-  }
-
-
   getPatientAppointment(id: string) {
     return this.http.get<PatientAppointment>(this.baseUrl + 'appointment?id=' + id).subscribe({
       next: patientAppointment => {
@@ -96,8 +89,8 @@ export class PatientAppointmentService {
       id: item.id,
       serviceName: item.name,
       price: item.price,
-      capacity: 0,
       pictureUrl: item.pictureUrl,
+      capacity: 0,  
       hospital: item.hospital,
       type: item.serviceType
     }
@@ -110,6 +103,13 @@ export class PatientAppointmentService {
     const total = subtotal + this.additionalCosts;
     this.patientAppointmentTotalSource.next({ additionalCosts: this.additionalCosts, total, subtotal });
   }
+
+  setAdditionalCostPrice(appointmentType: AppointmentType) {
+    this.additionalCosts = appointmentType.price;
+    this.calculateTotals();
+
+  }
+
 
 
   private isService(item: Service | Appointment): item is Service {
