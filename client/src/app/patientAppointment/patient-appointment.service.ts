@@ -77,7 +77,6 @@ export class PatientAppointmentService {
   deletePatientAppointment(patientAppointment: PatientAppointment) {
     return this.http.delete(this.baseUrl + 'appointment?id=' + patientAppointment.id).subscribe({
       next: () => {
-        this.patientAppointmentSource.next(null);
         this.patientAppointmentTotalSource.next(null);
         localStorage.removeItem('appointment_id');
       }
