@@ -86,14 +86,31 @@ namespace Infrastructure.Services
             return appointment;
         }
 
-        public Task<Booking> UpdateBookingPaymentFailed(string paymentIntentId)
+        public async Task<Booking> UpdateBookingPaymentFailed(string paymentIntentId)
         {
-            throw new NotImplementedException();
+            var spec = new BookingByPaymentIntendIdSpecification(paymentIntentId);
+            var booking = await _unitOfWork.Repository<Booking>().GetEntityWithSpec(spec);
+
+            if (booking == null)
+                return null;
+
+            booking.Status = BookingStatus.PaymentFailed;
+            await _unitOfWork.Completee();
+
+            return booking;
         }
 
-        public Task<Booking> UpdateBookingPaymentSucceeded(string paymentIntentId)
+        public async Task<Booking> UpdateBookingPaymentSucceeded(string paymentIntentId)
         {
-            throw new NotImplementedException();
+            var spec = new BookingByPaymentIntendIdSpecification(paymentIntentId);
+            var booking = await _unitOfWork.Repository<Booking>().GetEntityWithSpec(spec);
+
+            if (booking == null) return null;
+
+            booking.Status = BookingStatus.PaymentReceived;
+            await _unitOfWork.Completee();
+
+            return booking;
         }
     }
 }

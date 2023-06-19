@@ -8,6 +8,8 @@ import { PatientAppointment } from 'src/app/models/patientAppointment';
 import { User } from 'src/app/models/user';
 import { PatientInfo } from 'src/app/models/patientInfo';
 import { Stripe, StripeCardCvcElement, StripeCardExpiryElement, StripeCardNumberElement, loadStripe } from '@stripe/stripe-js';
+import { firstValueFrom } from 'rxjs';
+import { BookingToCreate } from 'src/app/models/booking';
 
 @Component({
   selector: 'app-checkout-payment',
@@ -23,6 +25,9 @@ export class CheckoutPaymentComponent implements OnInit {
   cardNumber?: StripeCardNumberElement;
   cardExpiry?: StripeCardExpiryElement;
   cardCvc?: StripeCardCvcElement;
+  cardNumberComplete = false;
+  cardExpiryComplete = false;
+  cardCvcComplete = false;
   cardErrors: any;
   loading = false;
 
@@ -38,7 +43,7 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardNumber = elements.create('cardNumber');
         this.cardNumber.mount(this.cardNumberElement?.nativeElement);
         this.cardNumber.on('change', event => {
-          // this.cardNumberComplete = event.complete;
+          this.cardNumberComplete = event.complete;
           if (event.error) this.cardErrors = event.error.message;
           else this.cardErrors = null;
         })
@@ -47,7 +52,7 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardExpiry = elements.create('cardExpiry');
         this.cardExpiry.mount(this.cardExpiryElement?.nativeElement);
         this.cardExpiry.on('change', event => {
-          // this.cardExpiryComplete = event.complete;
+          this.cardExpiryComplete = event.complete;
           if (event.error) this.cardErrors = event.error.message;
           else this.cardErrors = null;
         })
@@ -55,7 +60,7 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardCvc = elements.create('cardCvc');
         this.cardCvc.mount(this.cardCvcElement?.nativeElement);
         this.cardCvc.on('change', event => {
-          // this.cardCvcComplete = event.complete;
+          this.cardCvcComplete = event.complete;
           if (event.error) this.cardErrors = event.error.message;
           else this.cardErrors = null;
         })
@@ -63,39 +68,63 @@ export class CheckoutPaymentComponent implements OnInit {
     })
   }
 
+  get paymentFormComplete() {
+    return this.checkoutForm?.get('paymentForm')?.valid
+      && this.cardNumberComplete
+      && this.cardExpiryComplete
+      && this.cardCvcComplete
+  }
+
 
   async submitBooking() {
     this.loading = true;
     const patientAppointment = this.patientAppointmentService.getCurrentPatientAppointmentValue();
-    if (!patientAppointment) return;
-    const bookingToCreate = this.getBookingToCreate(patientAppointment);
-    if (!bookingToCreate) return;
-    this.checkoutService.createBooking(bookingToCreate).subscribe({
-      next: booking => {
-        this.stripe?.confirmCardPayment(patientAppointment.clientSecret!, {
-          payment_method: {
-            card: this.cardNumber!,
-            billing_details: {
-              name: this.checkoutForm?.get('paymentForm')?.get('nameOnCard')?.value
-            }
-          }
-        }).then(result => {
-          if (result.paymentIntent) {
-            // this.patientAppointmentService.deletePatientAppointment();
-            const navigationExtras: NavigationExtras = { state: booking };
-            this.router.navigate(['checkout/success'], navigationExtras);
-          } else {
-            this.toastr.error(result.error.message);
-          }
-        })
-
+    if (!patientAppointment) throw new Error('cannot get patient appointment');
+    try {
+      const createdBooking = await this.createBooking(patientAppointment);
+      const paymentResult = await this.confirmPaymentWithStripe(patientAppointment);
+      if (paymentResult.paymentIntent) {
+        const navigationExtras: NavigationExtras = { state: createdBooking };
+        this.router.navigate(['checkout/success'], navigationExtras);
+      } else {
+        this.toastr.error(paymentResult.error.message);
       }
-    })
+    } catch (error: any) {
+      console.log(error);
+      this.toastr.error(error.message)
+    } finally {
+      this.loading = false;
+    }
+
   }
-  getBookingToCreate(patientAppointment: PatientAppointment) {
+
+
+  private async confirmPaymentWithStripe(patientAppointment: PatientAppointment | null) {
+    if (!patientAppointment) throw new Error('Patient appointment is null');
+    const result = this.stripe?.confirmCardPayment(patientAppointment.clientSecret!, {
+      payment_method: {
+        card: this.cardNumber!,
+        billing_details: {
+          name: this.checkoutForm?.get('paymentForm')?.get('nameOnCard')?.value
+        }
+      }
+    });
+    if (!result) throw new Error('Problem attempting payment with stripe');
+    return result;
+  }
+
+
+  private async createBooking(patientAppointment: PatientAppointment | null) {
+    if (!patientAppointment) throw new Error('Patient appointment is null');
+    const bookingToCreate = this.getBookingToCreate(patientAppointment);
+
+    return firstValueFrom(this.checkoutService.createBooking(bookingToCreate));
+  }
+
+  getBookingToCreate(patientAppointment: PatientAppointment): BookingToCreate {
     const appointmentTypeId = this.checkoutForm?.get('appointmentTypeForm')?.get('appointmentType')?.value;
     const info = this.checkoutForm?.get('infoForm')?.value as PatientInfo;
-    if (!appointmentTypeId || !info) return;
+    if (!appointmentTypeId || !info) throw new Error("Problem with appointment");
     return {
       patientAppointmentId: patientAppointment.id,
       appointmentTypeId: appointmentTypeId,

@@ -36,13 +36,6 @@ export class CheckoutComponent implements OnInit {
     })
   })
 
-  /*getPatientInfoFormValues() {
-    this.accountService.getUserAddress().subscribe({
-      next: address => {
-        address && this.checkoutForm.get('addressForm')?.patchValue(address)
-@@ -40,4 +43,12 @@
-    })
-  }*/
 
   getAppointmentTypeValues() {
     const appointment = this.appointmentService.getCurrentPatientAppointmentValue();
