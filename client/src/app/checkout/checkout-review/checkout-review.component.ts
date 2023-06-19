@@ -9,13 +9,17 @@ import { PatientAppointmentService } from 'src/app/patientAppointment/patient-ap
   styleUrls: ['./checkout-review.component.css']
 })
 export class CheckoutReviewComponent {
-  
+  @Input() appStepper?: CdkStepper;
+
 
   constructor(private patientAppointmentService: PatientAppointmentService, private toastr: ToastrService) { }
 
   createPaymentIntent() {
     this.patientAppointmentService.createPaymentIntent().subscribe({
-      next: () => this.toastr.success('Payment intent created'),
+      next: () => {
+        this.toastr.success('Payment intent created'),
+        this.appStepper?.next();
+      },
       error: error => this.toastr.error(error.message)
     })
   }

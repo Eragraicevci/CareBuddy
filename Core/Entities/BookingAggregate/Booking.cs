@@ -12,6 +12,7 @@ namespace Core.Entities.BookingAggregate
             PatientInfo info,
             AppointmentType appointmentType,
             decimal subtotal
+            // string paymentIntentId
         )
         {
             PatientUsername = patientUsername;
@@ -19,6 +20,7 @@ namespace Core.Entities.BookingAggregate
             AppointmentType = appointmentType;
             BookingItems = bookingItems;
             Subtotal = subtotal;
+            // PaymentIntentId = paymentIntentId;
         }
 
         public string PatientUsername { get; set; }

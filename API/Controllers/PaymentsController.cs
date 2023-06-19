@@ -22,6 +22,7 @@ namespace API.Controllers
         public async Task<ActionResult<PatientAppointment>> CreateOrUpdatePaymentIntent(string appointmentId)
         {
             return await _paymentService.CreateOrUpdatePaymentIntent(appointmentId);
+
         }
     }
 }

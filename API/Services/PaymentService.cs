@@ -12,30 +12,35 @@ namespace Infrastructure.Services
 {
     public class PaymentService : IPaymentService
     {
-         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IAppointmentRepository _appointmentRepository;
         private readonly IConfiguration _config;
-        
-        public PaymentService(IUnitOfWork unitOfWork, IAppointmentRepository appointmentRepository,
-            IConfiguration config)
+
+        public PaymentService(
+            IUnitOfWork unitOfWork,
+            IAppointmentRepository appointmentRepository,
+            IConfiguration config
+        )
         {
             _config = config;
             _appointmentRepository = appointmentRepository;
             _unitOfWork = unitOfWork;
         }
+
         public async Task<PatientAppointment> CreateOrUpdatePaymentIntent(string appointmentId)
         {
             StripeConfiguration.ApiKey = _config["StripeSettings:SecretKey"];
 
             var appointment = await _appointmentRepository.GetAppointmentAsync(appointmentId);
-           // if (appointment == null) return null;
+            // if (appointment == null) return null;
 
             var appointmentTypePrice = 0m;
 
             if (appointment.AppointmentTypeId.HasValue)
             {
-                var appointmentType = await _unitOfWork.Repository<AppointmentType>()
-                .GetByIdAsync((int)appointment.AppointmentTypeId);
+                var appointmentType = await _unitOfWork
+                    .Repository<AppointmentType>()
+                    .GetByIdAsync((int)appointment.AppointmentTypeId);
                 appointmentTypePrice = appointmentType.Price;
             }
 
@@ -52,12 +57,13 @@ namespace Infrastructure.Services
 
             PaymentIntent intent;
 
-              if (string.IsNullOrEmpty(appointment.PaymentIntentId))
+            if (string.IsNullOrEmpty(appointment.PaymentIntentId))
             {
                 var options = new PaymentIntentCreateOptions
                 {
-                    Amount = (long)appointment.Items.Sum(i => i.Capacity * (i.Price * 100)) + (long)
-                    appointmentTypePrice * 100,
+                    Amount =
+                        (long)appointment.Items.Sum(i => i.Capacity * (i.Price * 100))
+                        + (long)appointmentTypePrice * 100,
                     Currency = "usd",
                     PaymentMethodTypes = new List<string> { "card" }
                 };
@@ -69,12 +75,13 @@ namespace Infrastructure.Services
             {
                 var options = new PaymentIntentUpdateOptions
                 {
-                    Amount = (long)appointment.Items.Sum(i => i.Capacity * (i.Price * 100)) + (long)
-                    appointmentTypePrice * 100
+                    Amount =
+                        (long)appointment.Items.Sum(i => i.Capacity * (i.Price * 100))
+                        + (long)appointmentTypePrice * 100
                 };
                 await service.UpdateAsync(appointment.PaymentIntentId, options);
             }
-             await _appointmentRepository.UpdateAppointmentAsync(appointment);
+            await _appointmentRepository.UpdateAppointmentAsync(appointment);
 
             return appointment;
         }
