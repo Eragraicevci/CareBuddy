@@ -4,7 +4,7 @@ import { Appointment, PatientAppointment, PatientAppointmentTotals } from '../mo
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Service } from '../models/service';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { AppointmentType } from '../models/appointmentType';
 
 
@@ -17,7 +17,7 @@ export class PatientAppointmentService {
   patientAppointmentSource$ = this.patientAppointmentSource.asObservable();
   private patientAppointmentTotalSource = new BehaviorSubject<PatientAppointmentTotals | null>(null);
   patientAppointmentTotalSource$ = this.patientAppointmentTotalSource.asObservable();
-  additionalCosts = 0;
+  
 
   constructor(private http: HttpClient) { }
 
@@ -99,13 +99,27 @@ export class PatientAppointmentService {
     const patientAppointment = this.getCurrentPatientAppointmentValue();
     if (!patientAppointment) return;
     const subtotal = patientAppointment.items.reduce((a, b) => b.price + a, 0);
-    const total = subtotal + this.additionalCosts;
-    this.patientAppointmentTotalSource.next({ additionalCosts: this.additionalCosts, total, subtotal });
+    const total = subtotal + patientAppointment.appointmentTypePrice;
+    this.patientAppointmentTotalSource.next({ additionalCosts:patientAppointment.appointmentTypePrice, total, subtotal });
+  }
+
+  createPaymentIntent() {
+    return this.http.post<PatientAppointment>(this.baseUrl + 'payments/' + this.getCurrentPatientAppointmentValue()?.id, {})
+      .pipe(
+        map(patientAppointment => {
+            this.patientAppointmentSource.next(patientAppointment);
+        })
+      )
   }
 
   setAdditionalCostPrice(appointmentType: AppointmentType) {
-    this.additionalCosts = appointmentType.price;
-    this.calculateTotals();
+    const appointment = this.getCurrentPatientAppointmentValue();
+    if (appointment) {
+      
+      appointment.appointmentTypePrice= appointmentType.price;
+      appointment.appointmentTypeId=appointmentType.id;
+      this.setPatientAppointment(appointment);
+    }
 
   }
 
