@@ -1,18 +1,126 @@
-<div class="container mt-5">
-    <div *ngIf="!registerMode" style="text-align: center;">
-        <h1>Improve your health here</h1>
-        <p class="lead">Come on in to view hospitals & doctors... all you need to do is sign up!</p>
-        <div class="text-center">
-            <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2 btn-register">Register</button>
-            <button class="btn btn-primary btn-info btn-lg">Learn more</button>
+<div id="main_slider" class="carousel slide" data-ride="carousel">
+    <div class="outer-div">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="banner_section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="banner_taital">Care Buddy</h1>
+                                <p class="banner_text">Empowering Health, Transforming Lives: Discover a World of
+                                    Wellness
+                                    and Care at Our Healthcare Hub.</p>
+                                <div class="text">
+                                    <p class="description">Welcome to our Healthcare Hub, where we are dedicated to
+                                        empowering health and transforming lives. Our website is a comprehensive
+                                        resource
+                                        for all your healthcare needs, providing a wealth of information, services, and
+                                        support to help you achieve optimal well-being.</p>
+                                </div>
+                                <div class="text">
+                                    <p class="description">
+                                        At our Healthcare Hub, we believe that health is not merely the absence of
+                                        illness,
+                                        but a state of complete physical, mental, and social well-being. With that
+                                        philosophy in mind, we have curated a wide range of resources and tools to cater
+                                        to
+                                        all aspects of your health journey.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="image_1"><img src="assets/images/img-1.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div *ngIf="registerMode" class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+    <div class="news_section layout_padding">
+        <div class="container">
+            <div class="news_section_2 layout_padding">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="box_main">
+                            <div class="icon_1"><img src="assets/images/icon-2.png"></div>
+                            <h4 class="daily_text">Daily care experts</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="box_main active">
+                            <div class="icon_1"><img src="assets/images/icon-3.png"></div>
+                            <h4 class="daily_text_1">Available 24/7</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="box_main">
+                            <div class="icon_1"><img src="assets/images/icon-4.png"></div>
+                            <h4 class="daily_text_1">Balanced care</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="contact_section layout_padding">
+        <div class="container">
+            <h1 class="contact_taital">What we do</h1>
+            <div class="news_section_2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="icon_main">
+                            <div class="icon_7"><img src="assets/images/icon-7.png"></div>
+                            <h4 class="diabetes_text">Diabetes and obesity Counselling </h4>
+                        </div>
+                        <div class="icon_main">
+                            <div class="icon_7"><img src="assets/images/icon-5.png"></div>
+                            <h4 class="diabetes_text">Obstetrics and Gynsecology</h4>
+                        </div>
+                        <div class="icon_main">
+                            <div class="icon_7"><img src="assets/images/icon-6.png"></div>
+                            <h4 class="diabetes_text">Surgical and medical Oncology</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact_box">
+                            <div class="container mt-9">
+                                <div class="col-md-6">
+                                    <div class="image_1" style="position: relative; top: -100px; right: 50px;">
+                                        <img src="assets/images/health-check.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="register">
+        <div class="container mt-5">
+            <div *ngIf="!registerMode" style="text-align: center;">
+                <h1>Improve your health here</h1>
+                <p class="lead">Come on in to view hospitals & doctors... all you need to do is sign up!</p>
+                <div class="text-center">
+                    <button (click)="registerToggle()"
+                        class="btn btn-primary btn-lg me-2 btn-register">Register</button>
+                </div>
+            </div>
+
+            <div *ngIf="registerMode" class="container">
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </div>

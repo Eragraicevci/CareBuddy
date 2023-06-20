@@ -1,5 +1,251 @@
+
 .btn-register {
-    background-color: #0078bf ;
-    border-color: #0078bf ;
-  }
-  
+  background-color: #0078bf ;
+  border-color: #0078bf ;
+}
+
+.banner_taital {
+  margin-top: 100px; 
+  /* margin-bottom: 40px;  */
+  /* line-height: 1.2;  */
+
+}
+
+
+
+.carousel-inner .banner_taital {
+color: #e95420;
+font-size: 50px;
+font-weight: bold;
+}
+
+.carousel-inner .banner_text {
+font-weight: bold;
+font-size: larger;
+}
+
+.text {
+margin-top: 50px;
+font-weight: bold;
+
+}
+
+.news_section {
+width: 100%;
+float: left;
+/* padding-bottom: 90px; */
+margin-top: 60px;
+}
+
+.news_section_2 {
+width: 100%;
+float: left;
+padding-top: 90px; /* Add this line */
+}
+
+.box_main {
+width: 100%;
+float: left;
+background-color: #252525;
+height: auto;
+border-radius: 15px;
+padding: 40px;
+}
+
+.box_main:hover {
+background-color: #00518f;
+}
+
+.box_main.active {
+background-color: #00518f;
+}
+
+.icon_1 {
+width: 100%;
+float: left;
+text-align: center;
+padding-bottom: 20px;
+line-height: 95px;
+}
+
+.daily_text,
+.daily_text_1 {
+width: 100%; /* Change from 40% to 100% */
+margin: 0 auto;
+text-align: center;
+font-weight: bold;
+font-size: 24px;
+display: block;
+color: #fff;
+line-height: 30px;
+padding-bottom: 40px;
+}
+
+
+
+.contact_section {
+width: 100%;
+float: left;
+background-size: 100%;
+background-repeat: no-repeat;
+/* padding-bottom: 150px;
+ */
+ margin-top: 100px;
+}
+
+.contact_taital {
+width: 100%;
+float: left;
+font-size: 50px;
+color: #e95420;
+font-weight: bold;
+}
+
+.icon_main {
+width: 100%;
+display: flex;
+padding-top: 50px;
+}
+
+.icon_7 {
+width: 20%;
+float: left;
+}
+
+.diabetes_text {
+width: 70%;
+float: left;
+font-size: 30px;
+color: #040101;
+font-weight: 500;
+}
+
+.contact_box {
+margin-bottom:70px;
+margin-left:100px;
+}
+
+.image {
+margin-top: -850px; /* Adjust this value to your preference */
+}
+
+.book_text {
+width: 100%;
+float: left;
+font-size: 30px;
+color: #252525;
+text-align: center;
+font-weight: 500;
+}
+
+.Email_text {
+width: 100%;
+float: left;
+font-size: 18px;
+color: #bebebe;
+background-color: #ffffff;
+padding: 5px 15px;
+border: 0px;
+margin-top: 30px;
+}
+
+.massage-bt {
+width: 100%;
+float: left;
+color: #bebebe;
+height: 110px;
+font-size: 18px;
+padding: 36px 20px 10px 20px;
+background-color: #ffffff;
+border: 0px;
+margin-top: 30px;
+}
+
+.send_bt {
+width: 140px;
+margin: 0 auto;
+text-align: center;
+}
+
+.send_bt a {
+width: 100%;
+float: left;
+font-size: 18px;
+color: #ffffff;
+background-color: #1becde;
+padding: 7px 0px;
+text-align: center;
+margin-top: 50px;
+text-transform: uppercase;
+}
+
+.send_bt a:hover {
+background-color: #252525;
+}
+
+.client_section {
+width: 100%;
+float: left;
+padding-bottom: 90px;
+}
+
+.client_taital {
+width: 100%;
+float: left;
+font-size: 40px;
+text-align: center;
+color: #111010;
+font-weight: bold;
+}
+
+.client_text {
+width: 100%;
+float: left;
+font-size: 16px;
+color: #444443;
+text-align: center;
+margin: 0px;
+}
+
+.client_section_2 {
+width: 100%;
+float: left;
+padding-top: 60px;
+}
+
+.client_left {
+width: 40%;
+float: left;
+}
+
+.client_right {
+width: 60%;
+float: left;
+padding-top: 100px;
+}
+
+.client_img {
+width: 80%;
+margin: 0 auto;
+text-align: center;
+display: block;
+}
+
+.distracted_text {
+width: 100%;
+float: left;
+font-size: 40px;
+color: #080808;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+.lorem_text {
+width: 100%;
+float: left;
+font-size: 16px;
+color: #444443;
+margin: 0px;
+}
+
+

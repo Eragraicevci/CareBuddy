@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "alOfEyDNnLAv5FleHwHyQG8UXs1/DOxvvLkFUs6Qk/w=",
+  "Hash": "KTDrfAadeircZvw05KMN2/YWlH37F+QAKUto3Tl03G8=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "API\\wwwroot",
       "Source": "API",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/bloodAnalysis.jpg",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\bloodAnalysis.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\bloodGlucoseTest.jpeg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\bloodGlucoseTest.jpeg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/bloodGlucoseTest.jpeg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\bloodGlucoseTest.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\cardiacCatheterization.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\cardiacCatheterization.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/cardiacCatheterization.jpg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\cardiacCatheterization.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\cataractSurgery.png",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\cataractSurgery.png",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/cataractSurgery.png",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\cataractSurgery.png"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\coagulationTest.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\coagulationTest.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/coagulationTest.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\coagulationTest.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/dental.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\dental.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dentalCheckupCleaning.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\dentalCheckupCleaning.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/dentalCheckupCleaning.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\dentalCheckupCleaning.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dentalFillingsRestorations.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\dentalFillingsRestorations.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/dentalFillingsRestorations.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\dentalFillingsRestorations.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\gastrointestinalSurgery.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\gastrointestinalSurgery.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/gastrointestinalSurgery.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\gastrointestinalSurgery.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\jointReplacementSurgery.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\jointReplacementSurgery.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/jointReplacementSurgery.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\jointReplacementSurgery.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\laparoscopicSurgery.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\laparoscopicSurgery.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/laparoscopicSurgery.jpg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\laparoscopicSurgery.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\mri.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\mri.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/mri.jpg",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\mri.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\neurosurgery.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\neurosurgery.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/neurosurgery.jpg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\neurosurgery.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\obstetricsGynecology.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\obstetricsGynecology.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/obstetricsGynecology.jpg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\obstetricsGynecology.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\orthopedicConsultation.jpeg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\orthopedicConsultation.jpeg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/orthopedicConsultation.jpeg",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\orthopedicConsultation.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\physicalTherapy.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\physicalTherapy.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/physicalTherapy.jpg",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\images\\services\\physicalTherapy.jpg"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\prenatalUltrasound.jpg",
+      "Identity": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\prenatalUltrasound.jpg",
       "SourceId": "API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\",
       "BasePath": "_content/API",
       "RelativePath": "images/services/prenatalUltrasound.jpg",
       "AssetKind": "All",

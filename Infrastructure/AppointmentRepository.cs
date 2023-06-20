@@ -19,13 +19,6 @@ namespace Infrastructure
             return await _database.KeyDeleteAsync(appointmentId);
         }
 
-        // public async Task<PatientAppointment> GetAppointmentAsync(string appointmentId)
-        // {
-        //     var data = await _database.StringGetAsync(appointmentId);
-
-        //     return data.IsNullOrEmpty ? null : JsonSerializer.Deserialize<PatientAppointment>(data);
-        // }
-
         public async Task<PatientAppointment> GetAppointmentAsync(string appointmentId)
         {
             if (string.IsNullOrEmpty(appointmentId))
