@@ -2,10 +2,10 @@
      <div class="row">
         <div class="col-8">
             <app-stepper #appStepper>
-                <cdk-step [label]="'PatientInfo'"  [completed]="checkoutForm.get('infoForm')?.valid">
+                <cdk-step [label]="'Personal Information'"  [completed]="checkoutForm.get('infoForm')?.valid">
                     <app-checkout-info [checkoutForm]="checkoutForm"></app-checkout-info>
                 </cdk-step>
-                <cdk-step [label]="'AppointmentType'" [completed]="checkoutForm.get('appointmentTypeForm')?.valid">
+                <cdk-step [label]="'Appointment Type'" [completed]="checkoutForm.get('appointmentTypeForm')?.valid">
                     <app-checkout-appointment-type [checkoutForm]="checkoutForm"></app-checkout-appointment-type>
                 </cdk-step>
                 <cdk-step [label]="'Review'" >

@@ -1,18 +1,130 @@
 [
   {
-    "Name": "Lorem ipsum dolor",
-    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-    "Price": 200,
-    "PictureUrl": "images/services/bloodAnalysis.jpg",
+    "Name": "Blood Glucose Test",
+    "Description": "Measures the level of glucose (sugar) in the blood. It is primarily used to evaluate and monitor blood sugar control, diagnose diabetes, and assess overall metabolic health. The test involves drawing a blood sample, typically obtained by pricking the fingertip or taking a blood sample from a vein.",
+    "Price": 50,
+    "PictureUrl": "images/services/bloodGlucoseTest.jpeg",
     "ServiceTypeId": 1,
     "HospitalId": 1
   },
   {
-    "Name": "Lorem ipsum dolor",
-    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
-    "Price": 150,
-    "PictureUrl": "images/services/dental.jpg",
+    "Name": "Coagulation Test",
+    "Description": " Assesses the blood's ability to clot properly by measuring clotting factors and other components. It helps diagnose bleeding disorders or monitor patients on anticoagulant medications. Coagulation tests help healthcare providers assess the overall function of the clotting process, identify bleeding disorders or clotting abnormalities, monitor anticoagulant therapy, and guide appropriate treatment decisions. They are instrumental in diagnosing and managing conditions related to blood clotting and ensuring patient safety during surgical procedures or in cases of bleeding disorders.",
+    "Price": 80,
+    "PictureUrl": "images/services/coagulationTest.jpg",
     "ServiceTypeId": 1,
+    "HospitalId": 2
+  },
+  {
+    "Name": "Magnetic Resonance Imaging (MRI)",
+    "Description": "Utilizes strong magnetic fields and radio waves to produce detailed images of internal body structures. MRI is commonly used to diagnose and monitor various conditions, including neurological disorders, musculoskeletal injuries, and tumors.",
+    "Price": 250,
+    "PictureUrl": "images/services/mri.jpg",
+    "ServiceTypeId": 7,
+    "HospitalId": 2
+  },
+  {
+    "Name": "Physical Therapy",
+    "Description": "Offers rehabilitative exercises, manual therapy, and specialized techniques to help patients recover from injuries, surgeries, or manage chronic conditions. Physical therapy aims to improve mobility, reduce pain, and enhance overall function.",
+    "Price": 120,
+    "PictureUrl": "images/services/physicalTherapy.jpg",
+    "ServiceTypeId": 5,
+    "HospitalId": 3
+  },
+  {
+    "Name": "Cardiac Catheterization",
+    "Description": "Involves the insertion of a catheter into the heart to diagnose and treat various cardiovascular conditions. It helps evaluate blood flow, measure pressures within the heart, and perform interventions such as angioplasty or stent placement.",
+    "Price": 1500,
+    "PictureUrl": "images/services/cardiacCatheterization.jpg",
+    "ServiceTypeId": 2,
+    "HospitalId": 2
+  },
+  {
+    "Name": "Obstetrics Tests",
+    "Description": "Provides comprehensive healthcare services for women, including prenatal care, reproductive health, family planning, gynecological exams, and treatment of gynecological disorders. Obstetrics and gynecology services focus on women's reproductive health and well-being.",
+    "Price": 600,
+    "PictureUrl": "images/services/obstetricsGynecology.jpg",
+    "ServiceTypeId": 4,
     "HospitalId": 1
+  },
+  {
+    "Name": "Dental Check-up and Cleaning",
+    "Description": "Includes a comprehensive dental examination, professional cleaning, and oral hygiene instructions. Dental check-ups help detect early signs of dental problems, prevent tooth decay, and maintain oral health.",
+    "Price": 100,
+    "PictureUrl": "images/services/dentalCheckupCleaning.jpg",
+    "ServiceTypeId": 3,
+    "HospitalId": 3
+  },
+  {
+    "Name": "Dental Fillings and Restorations",
+    "Description": "Involves the repair of decayed or damaged teeth using dental fillings or restorative materials. Dental fillings help restore the function and aesthetics of the affected teeth, prevent further decay, and improve overall oral health.",
+    "Price": 300,
+    "PictureUrl": "images/services/dentalFillingsRestorations.jpg",
+    "ServiceTypeId": 3,
+    "HospitalId": 4
+  },
+  {
+    "Name": "Prenatal Ultrasound",
+    "Description": "Uses sound waves to create images of the fetus in the womb. Prenatal ultrasound helps monitor fetal development, assess the health of the baby, and detect any potential abnormalities or complications during pregnancy.",
+    "Price": 100,
+    "PictureUrl": "images/services/prenatalUltrasound.jpg",
+    "ServiceTypeId": 4,
+    "HospitalId": 4
+  },
+  {
+    "Name": "Orthopedic Consultation",
+    "Description": "Involves a comprehensive evaluation and consultation with an orthopedic specialist. Orthopedic consultations help diagnose and treat various musculoskeletal conditions, such as fractures, joint pain, sports injuries, and spine disorders.",
+    "Price": 50,
+    "PictureUrl": "images/services/orthopedicConsultation.jpeg",
+    "ServiceTypeId": 5,
+    "HospitalId": 5
+  },
+  {
+    "Name": "Joint Replacement Surgery",
+    "Description": "Refers to surgical procedures in which damaged or diseased joints, such as hips or knees, are replaced with artificial implants. Joint replacement surgery aims to relieve pain, improve mobility, and enhance the overall function of the joint.",
+    "Price": 200,
+    "PictureUrl": "images/services/jointReplacementSurgery.jpg",
+    "ServiceTypeId": 8,
+    "HospitalId": 6
+  },
+  {
+    "Name": "Orthopedic Surgery",
+    "Description": "Refers to surgical procedures performed on the musculoskeletal system, including bones, joints, ligaments, tendons, and muscles. Orthopedic surgery is used to treat conditions such as fractures, joint injuries, sports-related injuries, and degenerative diseases of the musculoskeletal system.",
+    "Price": 120,
+    "PictureUrl": "images/services/jointReplacementSurgery.jpg",
+    "ServiceTypeId": 8,
+    "HospitalId": 6
+  },
+  {
+    "Name": "Laparoscopic Surgery",
+    "Description": "A minimally invasive surgical technique that uses small incisions and a camera to perform procedures within the abdomen or pelvis. Laparoscopic surgery offers benefits such as reduced scarring, shorter recovery time, and less postoperative pain compared to traditional open surgeries.",
+    "Price": 200,
+    "PictureUrl": "images/services/laparoscopicSurgery.jpg",
+    "ServiceTypeId": 8,
+    "HospitalId": 7
+  },
+  {
+    "Name": "Cataract Surgery",
+    "Description": "A surgical procedure to remove the cloudy lens of the eye (cataract) and replace it with an artificial lens. Cataract surgery aims to improve vision, reduce glare, and enhance overall visual quality for individuals with cataracts.",
+    "Price": 900,
+    "PictureUrl": "images/services/cataractSurgery.png",
+    "ServiceTypeId": 8,
+    "HospitalId": 7
+  },
+  {
+    "Name": "Neuro-Surgery",
+    "Description": "A surgical specialty focused on the treatment of conditions affecting the brain, spinal cord, and nervous system. Neurosurgery may involve procedures such as brain tumor removal, spinal fusion, treatment of spinal cord injuries, and management of neurological disorders.",
+    "Price": 2000,
+    "PictureUrl": "images/services/neurosurgery.jpg",
+    "ServiceTypeId": 8,
+    "HospitalId": 4
+  },
+  {
+    "Name": "Gastrointestinal Surgery",
+    "Description": "Refers to surgical procedures performed on the gastrointestinal (GI) tract, including the esophagus, stomach, intestines, and related organs. Gastrointestinal surgery is used to treat conditions such as appendicitis, gallbladder disease, hernias, gastrointestinal cancers, and digestive disorders.",
+    "Price": 1400,
+    "PictureUrl": "images/services/gastrointestinalSurgery.jpg",
+    "ServiceTypeId": 8,
+    "HospitalId": 3
   }
 ]

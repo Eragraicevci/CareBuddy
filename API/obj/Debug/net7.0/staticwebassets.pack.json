@@ -1,12 +1,72 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\bloodAnalysis.jpg",
       "PackagePath": "staticwebassets\\images\\services\\bloodAnalysis.jpg"
     },
     {
-      "Id": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\bloodGlucoseTest.jpeg",
+      "PackagePath": "staticwebassets\\images\\services\\bloodGlucoseTest.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\cardiacCatheterization.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\cardiacCatheterization.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\cataractSurgery.png",
+      "PackagePath": "staticwebassets\\images\\services\\cataractSurgery.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\coagulationTest.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\coagulationTest.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dental.jpg",
       "PackagePath": "staticwebassets\\images\\services\\dental.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dentalCheckupCleaning.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\dentalCheckupCleaning.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\dentalFillingsRestorations.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\dentalFillingsRestorations.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\gastrointestinalSurgery.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\gastrointestinalSurgery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\jointReplacementSurgery.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\jointReplacementSurgery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\laparoscopicSurgery.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\laparoscopicSurgery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\mri.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\mri.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\neurosurgery.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\neurosurgery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\obstetricsGynecology.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\obstetricsGynecology.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\orthopedicConsultation.jpeg",
+      "PackagePath": "staticwebassets\\images\\services\\orthopedicConsultation.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\physicalTherapy.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\physicalTherapy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\CareBuddy\\API\\wwwroot\\images\\services\\prenatalUltrasound.jpg",
+      "PackagePath": "staticwebassets\\images\\services\\prenatalUltrasound.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",

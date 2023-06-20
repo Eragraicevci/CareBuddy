@@ -1,10 +1,31 @@
 [
   {
     "Id": 1,
-    "Name": "Spitali Amerikan"
+    "Name": "American Hospital"
   },
   {
     "Id": 2,
     "Name": "Aloka"
+  },
+  {
+    "Id": 3,
+    "Name": "Euromedical Center"
+  },
+  {
+    "Id": 4,
+    "Name": "Medicus Clinic"
+  },
+  {
+    "Id": 5,
+    "Name": "University Clinical Center of Kosovo"
+  },
+  {
+    "Id": 6,
+    "Name": "SwissMed Clinic"
+  },
+  {
+    "Id": 7,
+    "Name": "Tri Clinic"
   }
+
 ]
