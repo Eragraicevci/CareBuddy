@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
+<nav class="navbar navbar-expand-md navbar-dark navbar-custom">
+    <a href="#" class="logo">
+        <img src="assets/images/CareBuddy-logo.png" alt="CareBuddy logo" width="60px" height="50px">
+        CareBuddy
+    </a>
     <div class="container">
-        <a class="navbar-brand" routerLink="/" routerLinkActive="active">CareBuddy</a>
-
-
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <ng-container *ngIf="accountService.currentUser$  | async">
 
@@ -25,19 +26,21 @@
 
                 <div class="d-flex align-items-center">
                     <a class="nav-link" routerLink="/patientAppointment">My Appointments
-                        <div *ngIf="(patientAppointmentService.patientAppointmentSource$ | async) as patientAppointment" class="cart-no">
+                        <div *ngIf="(patientAppointmentService.patientAppointmentSource$ | async) as patientAppointment"
+                            class="cart-no">
                         </div>
                     </a>
                 </div>
             </ng-container>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
-            </li>
+            </li> -->
         </ul>
 
         <div class="dropdown" *ngIf="(accountService.currentUser$  | async) as user" dropdown>
             <img src="{{user.photo || './assets/user.png'}}" alt="user photo">
-            <a class="dropdown-toggle text-light text-decoration-none ms-2" dropdownToggle id="welcome">Welcome
+            <a class="dropdown-toggle  text-decoration-none ms-2" dropdownToggle id="welcome"
+                style="color: #292560; font-weight: bold;">Welcome
                 {{user.knownAs}} </a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a class="dropdown-item" routerLink="/member/edit" id="editProfile">Edit Profile</a>

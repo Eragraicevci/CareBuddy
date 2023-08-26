@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qqOake77GQp66pK6sEZLyUyBisuAULGu6Hjltf/Ny3c1FmnGOYqZMyv9mtwR2pY/H4CdzhLnrLivD58mOxy9Mg==",
+  "dgSpecHash": "wnDThuEnyhsUGDEsNqtI5aNqQw6lnBR+rvhvzZh45mgON/R5D33ojo6kn9OjtY5dGIeqelgRn4Dt8KQp1SsRgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\OneDrive\\Desktop\\care\\CareBuddy\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\PC\\OneDrive\\Desktop\\Lab 2\\CareBuddy\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

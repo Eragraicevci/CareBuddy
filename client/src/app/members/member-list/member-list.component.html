@@ -24,16 +24,16 @@
             </select>
         </div>
 
-        <button class="btn btn-primary ms-1" type="submit">Apply Filters</button>
+        <button class="btn ms-1 apply-custom" type="submit">Apply Filters</button>
         <button (click)="resetFilters()" class="btn btn-info ms-1" type="submit">Reset Filters</button>
 
 
 
         <div class="col">
             <div class="btn-group float-end">
-                <button type="button" class="btn btn-primary" name="orderBy" [(ngModel)]="userParams.orderBy"
+                <button type="button" class="btn apply-custom" name="orderBy" [(ngModel)]="userParams.orderBy"
                     btnRadio="lastActive" (click)="loadMembers()">Last Active</button>
-                <button type="button" class="btn btn-primary" name="orderBy" [(ngModel)]="userParams.orderBy"
+                <button type="button" class="btn apply-custom" name="orderBy" [(ngModel)]="userParams.orderBy"
                     btnRadio="created" (click)="loadMembers()">Newest doctors</button>
             </div>
         </div>
@@ -49,7 +49,7 @@
 
 <div class="d-flex justify-content-center" *ngIf="pagination">
     <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"
-        [maxSize]="10" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;"
+        [maxSize]="20" [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;"
         nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
     </pagination>
 </div>
