@@ -4,23 +4,20 @@ img, svg {
     border-radius: 10px; 
 }
 
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button {
-    background-color: #0056b3;
-  }
+
+.btn.btn-primary {
+    
+  background-color:darkblue;
+  color: white; 
+  border: 5px solid white;
+  transition: border-color 0.3s ease;
+}
+
+
+.btn-primary:hover {
+  border-color: rgb(239, 143, 143); 
+}
+
 
   h2{
     font-size: calc(1.325rem + 0.9vw);
@@ -36,3 +33,42 @@ button {
     font-size: 16px;
     line-height: 1.5;
   }
+
+.centered-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img{
+  width: 700px;
+}
+
+
+.btn.btn-primary{
+  width: 600px;
+  margin-bottom: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-hr {
+  background-color: rgba(227, 119, 119, 0.851); 
+  height: 5px; 
+  border: none; 
+}
+
+h2, h4, p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p {
+  max-width: 720px; 
+  margin: 0 auto; 
+  margin-bottom: 30px;
+}

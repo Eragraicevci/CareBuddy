@@ -66,3 +66,20 @@ C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Infrastructure\obj\Debug\net7.0\ref
 C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
 C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
 C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\bin\Debug\net7.0\Infrastructure.deps.json
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\bin\Debug\net7.0\Infrastructure.runtimeconfig.json
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\bin\Debug\net7.0\Infrastructure.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\bin\Debug\net7.0\Infrastructure.pdb
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\bin\Debug\net7.0\Core.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\bin\Debug\net7.0\Core.pdb
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CopyComplete
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll

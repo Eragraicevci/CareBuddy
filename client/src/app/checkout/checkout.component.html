@@ -2,7 +2,7 @@
      <div class="row">
         <div class="col-8">
             <app-stepper #appStepper>
-                <cdk-step [label]="'Personal Information'"  [completed]="checkoutForm.get('infoForm')?.valid">
+                <cdk-step [label]="'Information'"  [completed]="checkoutForm.get('infoForm')?.valid">
                     <app-checkout-info [checkoutForm]="checkoutForm"></app-checkout-info>
                 </cdk-step>
                 <cdk-step [label]="'Appointment Type'" [completed]="checkoutForm.get('appointmentTypeForm')?.valid">

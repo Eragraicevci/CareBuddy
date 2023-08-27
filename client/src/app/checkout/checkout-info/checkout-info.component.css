@@ -1,0 +1,14 @@
+.btn.btn-outline-primary {
+    background-color:  rgb(239, 143, 143);  
+    transition: border-color 0.3s ease;
+    color: white;
+    border-color:  rgb(239, 143, 143);
+}
+
+
+body .btn.btn-primary {
+    background-color:  #292560;
+    transition: border-color 0.3s ease;
+    border-color:  rgb(239, 143, 143);
+}
+

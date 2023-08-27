@@ -1,0 +1,13 @@
+
+.btn.btn-primary {
+    
+    background-color:#292560;
+    color: white; 
+    border: 5px solid white;
+    transition: border-color 0.3s ease;
+}
+
+
+.btn-primary:hover {
+    border-color: rgb(239, 143, 143); 
+}

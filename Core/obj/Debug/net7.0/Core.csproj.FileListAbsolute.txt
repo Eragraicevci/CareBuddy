@@ -54,3 +54,17 @@ C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Core\obj\Debug\net7.0\refint\Core.d
 C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Core\obj\Debug\net7.0\Core.pdb
 C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Core\obj\Debug\net7.0\Core.genruntimeconfig.cache
 C:\Users\PC\OneDrive\Desktop\Lab 2\CareBuddy\Core\obj\Debug\net7.0\ref\Core.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\bin\Debug\net7.0\Core.deps.json
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\bin\Debug\net7.0\Core.runtimeconfig.json
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\bin\Debug\net7.0\Core.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\bin\Debug\net7.0\Core.pdb
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.csproj.AssemblyReference.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.AssemblyInfoInputs.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.AssemblyInfo.cs
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\refint\Core.dll
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.pdb
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\Core.genruntimeconfig.cache
+C:\Users\eragr\OneDrive\Desktop\CareBuddy\Core\obj\Debug\net7.0\ref\Core.dll

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\OneDrive\\Desktop\\Lab 2\\CareBuddy\\Core\\Core.csproj": {}
+    "C:\\Users\\eragr\\OneDrive\\Desktop\\CareBuddy\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\OneDrive\\Desktop\\Lab 2\\CareBuddy\\Core\\Core.csproj": {
+    "C:\\Users\\eragr\\OneDrive\\Desktop\\CareBuddy\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\OneDrive\\Desktop\\Lab 2\\CareBuddy\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\eragr\\OneDrive\\Desktop\\CareBuddy\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\PC\\OneDrive\\Desktop\\Lab 2\\CareBuddy\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\OneDrive\\Desktop\\Lab 2\\CareBuddy\\Core\\obj\\",
+        "projectPath": "C:\\Users\\eragr\\OneDrive\\Desktop\\CareBuddy\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\eragr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eragr\\OneDrive\\Desktop\\CareBuddy\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\eragr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -95,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

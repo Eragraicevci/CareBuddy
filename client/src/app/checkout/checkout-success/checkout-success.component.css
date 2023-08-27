@@ -1,0 +1,17 @@
+body .btn.btn-primary {
+  background-color: #292560;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+
+
+.btn.btn-primary {
+  background-color: #292560 !important;
+  color: #fff !important;
+  border: 1px solid white;
+  transition: background-color 0.3s 
+}

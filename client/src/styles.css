@@ -22,11 +22,7 @@
   .member-tabset > .nav-tabs > li.open .dropdown-menu, .member-tabset > .nav-tabs > li:hover .dropdown-menu {
     margin-top: 0px;
   }
-  
-  .member-tabset > .nav-tabs > li.active {
-    border-bottom: 4px solid #E95420;
-    position: relative;
-  }
+
   
   .member-tabset > .nav-tabs > li.active > a {
     border: 0 !important;
@@ -48,5 +44,93 @@
   .nav-tabs {
       --bs-nav-tabs-border-width: 0px;
   }
+  .page-link.active, .active > .page-link {
+    z-index: 3;
+    color: var(--bs-pagination-active-color);
+    background-color: #292560;
+    border-color: white;
+    transition: border-color 0.3s ease;
+}
 
- 
+.page-link {
+  color: #292560;
+  transition: border-color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: rgb(239, 143, 143); 
+  color: white;
+}
+
+body .btn.btn-primary {
+  background-color: #292560;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+
+
+.btn.btn-primary {
+  background-color: #292560 !important;
+  color: #fff !important;
+  border: 1px solid white;
+  transition: background-color 0.3s 
+}
+
+.btn-primary:hover {
+  background-color: rgb(239, 143, 143); 
+}
+
+body .nav-link {
+  color: #292560 !important;
+}
+
+.nav-link {
+  color: #292560 !important;
+}
+
+
+.navbar-nav li.active {
+  background-color: rgb(239, 143, 143); 
+  color: white;
+}
+
+
+.btn.btn-success{
+  color: #fff !important;
+  border: 1px solid white;
+  transition: background-color 0.3s ;
+  background-color: rgb(239, 143, 143); 
+}
+
+.btn-outline-primary{
+  background-color: #white;
+  color: #292560;
+  transition: background-color 0.3s ;
+  border: 2px solid #292560;
+}
+
+.btn-outline-primary:hover{
+  background-color:#292560 ;
+  border: 2px solid white;
+}
+
+.nav-link.py-3.text-uppercase.fw-bold.active{
+  background-color: #292560;
+  color: white !important;
+}
+
+.btn-outline-success{
+  background-color: #292560;
+  color: white !important;
+}
+
+button.btn.btn-outline-primary{
+  background-color: #white !important;
+  color: #292560;
+  transition: background-color 0.3s ;
+  border: 2px solid #292560;
+}

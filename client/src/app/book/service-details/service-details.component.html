@@ -1,20 +1,17 @@
 <div class="container">
-    <div class="row" *ngIf="service">
-        <div class="col-6">
-            <img src="{{service.pictureUrl}}" alt="{{service.name}}" class="w-100">
-        </div>
-        <div class="col-6 mt-5">
-            <h2>{{service.name}}</h2>
-            <p>{{service.price | currency}}</p>
-            <div class="d-flex justify-content-start align-items-center">
-                <button (click)="addItemToPatientAppointment()">Book an appointment</button>
-            </div>
-            <div class="row mt-4">
-                <h4>Description</h4>
+    <div class="row text-center" *ngIf="service">
+         <h2>Learn More About {{service.name}}</h2>
+         <hr class="custom-hr">
+        <div class="centered-image">
+            <img src="{{service.pictureUrl}}" alt="{{service.name}}">
+        </div> 
+        
+        <div class="row mt-4">
+                <h4>The Benefits of {{service.name}} :</h4>
                 <p>{{service.description}}</p>
+                <p>Price: {{service.price | currency}}</p>
             </div>
-
-
-        </div>
-    </div>
+            <div class="button-container">
+                <button (click)="addItemToPatientAppointment()" class="btn btn-primary">Book an appointment</button>
+              </div>
 </div>
